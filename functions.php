@@ -229,7 +229,7 @@ function comment_mail_notify($comment_id) {
   $to = $parent_id ? trim(get_comment($parent_id)->comment_author_email) : '';
   $spam_confirmed = $comment->comment_approved;
   if (($parent_id != '') && ($spam_confirmed != 'spam') && ($to != $admin_email) && ($comment_author_email == $admin_email)) {
-    $wp_email = 'no-reply@' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME'])); // no-reply 可改为可用的 e-mail.
+    $wp_email = 'no-reply@phpabc.cn' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME'])); // no-reply 可改为可用的 e-mail.
     $subject = '您在 [' . get_option("blogname") . '] 的评论有新的回复';
     $message = '
     <div style="background-color:#eef2fa; border:1px solid #d8e3e8; color:#111; padding:0 15px; -moz-border-radius:5px; -webkit-border-radius:5px; -khtml-border-radius:5px; border-radius:5px;">
@@ -253,7 +253,7 @@ add_action('comment_post', 'comment_mail_notify');
 
 ?>
 <?php
-$themename = "TUX";
+$themename = "Simple-Tux";
 $shortname = "tux";
 $options = array (
 	array("name" => "标题（Title)",
@@ -360,9 +360,9 @@ function mytheme_admin() {
 .options .setup .explain {float:left;}
 </style>
 <div class="wrap">
-	<h2><b>Tux主题设置</b></h2>
+	<h2><b>Simple-Tux主题设置</b></h2>
     <hr />
-	<div>主题作者：<a href="http://www.phpabc.cn/" target="_blank">PHPABC</a> ¦ 当前版本：V1.0 ¦ 主题介绍、使用帮助及升级请访问：<a href="http://www.phpabc.cn/tux-theme.html" title="TUX" target="_blank">http://www.phpabc.cn/tux-theme.html</a></div>
+	<div>主题作者：<a href="http://www.phpabc.cn/" target="_blank">PHPABC</a> ¦ 当前版本：V1.0 ¦ 主题介绍、使用帮助及升级请访问：<a href="http://www.phpabc.cn/simple-tux.html" title="TUX" target="_blank">http://www.phpabc.cn/simple-tux.html</a></div>
 <form method="post">
 <div class="options">
 <?php foreach ($options as $value) {
