@@ -22,6 +22,7 @@
 				    <span class="meat_span"><i class="iconfont">&#xe800;</i><?php the_author() ?></span>
 					<span class="meat_span"><i class="iconfont">&#xe809;</i><?php the_category(', ') ?></span>
 					<span class="meat_span"><i class="iconfont">&#xe80c;</i><?php the_time('Y-m-d'); ?></span>
+					<span class="meat_span"><i class="iconfont">&#xe819;</i><?php post_views(' ', ' 次浏览'); ?></span>					
                     <span class="meat_span meat_max"><i class="iconfont">&#xe805;</i><?php the_tags('', ', ', ''); ?></span>
                 </div>						
 				<div class="excerpt">

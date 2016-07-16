@@ -196,6 +196,13 @@ ins{color:green}
 .nav-previous a,.nav-next a{text-align:center;height:22px;line-height:24px;display:inline-block;text-decoration:none;border:1px #CCC solid;padding:0 5px}
 .google{width:1190px;margin:0 auto;padding-top:20px;overflow:hidden}
 
+/*Tux tab*/
+#tab-title .selected{color:#000;font-weight:bold}
+#tab-title span{padding:5px 18px 8px 1px;border-right:0px;margin-left:-1px;cursor:pointer;}
+#tab-content .hide{display:none;}
+#tab-content ul{padding:5px 10px;overflow:hidden;border-right:1px solid #ccc;border-left:1px solid #ccc;background:#fff;}
+#tab-content ul li{line-height:25px;list-style:none}
+
 /*屏幕小于980px*/
 @media screen and (max-width:980px){#header,#content,.google{width:96%}
 #s{width:60%}

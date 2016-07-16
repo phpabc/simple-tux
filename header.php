@@ -51,6 +51,7 @@ if ( is_single() ){
 <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/favicon.ico" type="image/x-icon" />
 <script src="<?php bloginfo('template_directory'); ?>/jquery.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/theme.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/tab.js"></script>
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php

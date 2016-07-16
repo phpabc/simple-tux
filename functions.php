@@ -32,9 +32,12 @@ add_action( 'widgets_init', 'tux_widgets_init' );
 
 if ( ! function_exists( 'tux_content_nav' ) ) :
 
-register_nav_menus(array('header-menu' => __( 'PHPABC导航菜单' ),));
+register_nav_menus(array('header-menu' => __( 'Simple Tux导航菜单' ),));
 
-/*文章浏览次数统计*/
+//加载小工具
+include ('theme-widgets.php');
+
+//文章浏览次数统计
 function record_visitors()
 {
 	if (is_singular())
@@ -53,13 +56,63 @@ function record_visitors()
 }
 add_action('wp_head', 'record_visitors');
  
-function post_views($before = '(点击 ', $after = ' 次)', $echo = 1)
+function post_views($before = '(点击 ', $after = ' 次浏览)', $echo = 1)
 {
   global $post;
   $post_ID = $post->ID;
   $views = (int)get_post_meta($post_ID, 'views', true);
   if ($echo) echo $before, number_format($views), $after;
   else return $views;
+}
+
+
+//取得阅读最多的文章
+function tux_most_viewed($mode = '', $limit = 10, $show_date = 0, $term_id = 0, $beforetitle= '<a href=', $aftertitle = '</a>', $beforedate= '', $afterdate = '', $beforecount= '', $aftercount = '') {
+  global $wpdb, $post;
+  $output = '';
+  $mode = ($mode == '') ? 'post' : $mode;
+  $type_sql = ($mode != 'both') ? "AND post_type='$mode'" : '';
+  $term_sql = (is_array($term_id)) ? "AND $wpdb->term_taxonomy.term_id IN (" . join(',', $term_id) . ')' : ($term_id != 0 ? "AND $wpdb->term_taxonomy.term_id = $term_id" : '');
+  $term_sql.= $term_id ? " AND $wpdb->term_taxonomy.taxonomy != 'link_category'" : '';
+  $inr_join = $term_id ? "INNER JOIN $wpdb->term_relationships ON ($wpdb->posts.ID = $wpdb->term_relationships.object_id) INNER JOIN $wpdb->term_taxonomy ON ($wpdb->term_relationships.term_taxonomy_id = $wpdb->term_taxonomy.term_taxonomy_id)" : '';
+
+  // database query
+  $most_viewed = $wpdb->get_results("SELECT post_title, (meta_value+0) AS views FROM $wpdb->posts LEFT JOIN $wpdb->postmeta ON ($wpdb->posts.ID = $wpdb->postmeta.post_id) $inr_join WHERE post_status = 'publish' AND post_password = '' $term_sql $type_sql AND meta_key = 'views' GROUP BY ID ORDER BY views DESC LIMIT $limit");
+  if ($most_viewed) {
+   foreach ($most_viewed as $viewed) {
+    $post_views = number_format($viewed->views);
+    $post_title = esc_attr($viewed->post_title);
+    $get_permalink = esc_attr(get_permalink());
+    $output .= "<li>$beforetitle$get_permalink> $post_title$aftertitle</li>";
+   }   
+  } else {
+   $output = "<li>N/A</li>\n";
+  }
+  echo $output;
+}
+
+// 获得热评文章
+function tux_get_most_commented ($posts_num=10, $days=360){
+    global $wpdb;
+    $sql = "SELECT post_title , comment_count FROM $wpdb->posts WHERE post_type = 'post' AND TO_DAYS(now()) - TO_DAYS(post_date) < $days AND ($wpdb->posts.`post_status` = 'publish' ) ORDER BY comment_count DESC LIMIT 0 , $posts_num ";
+    $posts = $wpdb->get_results($sql);
+    $output = "";
+    foreach ($posts as $post){
+        $output .= "\n<li><a href= \"".get_permalink()."\" title=\"".$post->post_title."\" >".$post->post_title."</a></li>";
+    }
+    echo $output;
+}
+
+//随机文章
+function tux_rand_posts ($posts_num=10, $days=360){
+    global $wpdb;
+    $sql = "SELECT post_title FROM $wpdb->posts WHERE post_type = 'post' AND TO_DAYS(now()) - TO_DAYS(post_date) < $days AND ($wpdb->posts.`post_status` = 'publish' ) ORDER BY rand() LIMIT 0 , $posts_num ";
+    $posts = $wpdb->get_results($sql);
+    $output = "";
+    foreach ($posts as $post){
+        $output .= "\n<li><a href= \"".get_permalink()."\" title=\"".$post->post_title."\" >".$post->post_title."</a></li>";
+    }
+    echo $output;
 }
 
 //禁止wordpress加载google字体
@@ -110,18 +163,6 @@ function tux_comment( $comment, $args, $depth ) {
 	endswitch; // end comment_type check
 }
 endif;
-
-// 获得热评文章
-function tux_get_most_viewed($posts_num=10, $days=180){
-    global $wpdb;
-    $sql = "SELECT ID , post_title , comment_count FROM $wpdb->posts WHERE post_type = 'post' AND TO_DAYS(now()) - TO_DAYS(post_date) < $days AND ($wpdb->posts.`post_status` = 'publish' OR $wpdb->posts.`post_status` = 'inherit') ORDER BY comment_count DESC LIMIT 0 , $posts_num ";
-    $posts = $wpdb->get_results($sql);
-    $output = "";
-    foreach ($posts as $post){
-        $output .= "\n<li><a href= \"".get_permalink($post->ID)."\" title=\"".$post->post_title."\" >".$post->post_title."</a></li>";
-    }
-    echo $output;
-}
 
 //分页
 function pagination($query_string){
