@@ -51,3 +51,5 @@ if( function_exists( 'register_sidebar_widget' ) ) {
 	    register_sidebar_widget('文章TAB','tux_posts_tab');
 	}
 	function tux_posts_tab() { include(TEMPLATEPATH . '/widget/posts-tab.php'); }
+	
+	
