@@ -1,6 +1,4 @@
 jQuery(document).ready(function(){
-jQuery('#tab-title span').click(function(){
-    jQuery(this).addClass("selected").siblings().removeClass();
-    jQuery("#tab-content > ul").slideUp('1500').eq(jQuery('#tab-title span').index(this)).slideDown('1500');
-});
+ 	function tabToggle(){$(".tab_menu li").mouseover(function(){$(this).addClass("current").siblings().removeClass(),$(".tab_content > ul").eq($(".tab_menu li").index(this)).fadeIn("fast").siblings().hide().css({opacity:1}).stop()});}
+	tabToggle();
 });

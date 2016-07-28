@@ -129,7 +129,7 @@ ins{color:green}
 .widget h3{padding:5px 0 10px 10px;color:#333;border-bottom:3px solid #17A2E7;font-size:17px;}
 .widget ul{padding-top:10px}
 .widget ul ul,.widget .textwidget ul{border-top:0;padding-top:5px}
-.widget li{line-height:20px;padding:0 0 5px 8px;margin-bottom:5px;border-bottom:1px dashed #e0e0e0}
+.widget li{line-height:20px;padding:0 0 5px 8px;margin-bottom:5px;border-bottom:1px dashed #e0e0e0;white-space:nowrap;overflow:hidden; text-overflow: ellipsis; }
 .widget .children{background-color:#f9f9fa;margin:5px 0 0 5px;font-size:12px}
 .widget_views-plus{font-size:12px}
 .widget_views-plus a{font-size:14px}
@@ -197,12 +197,10 @@ ins{color:green}
 .google{width:1190px;margin:0 auto;padding-top:20px;overflow:hidden}
 
 /*Tux tab*/
-#tab-title .selected{color:#000;font-weight:bold}
-#tab-title span{padding:5px 18px 8px 1px;border-right:0px;margin-left:-1px;cursor:pointer;}
-#tab-content .hide{display:none;}
-#tab-content ul{padding:5px 10px;overflow:hidden;border-right:1px solid #ccc;border-left:1px solid #ccc;background:#fff;}
-#tab-content ul li{line-height:25px;list-style:none}
-
+.widget .tab_menu{float:left;overflow:hidden;}
+.widget .tab_menu li{font-size:1.125rem;width:72px;line-height:26px;float:left;padding:0 14px;border-bottom:3px solid #C3E8FA;}
+.widget .tab_menu li.current{color:#666;border-bottom:3px solid #59D;}
+.hide{display:none;}
 /*屏幕小于980px*/
 @media screen and (max-width:980px){#header,#content,.google{width:96%}
 #s{width:60%}
