@@ -6,7 +6,7 @@ if ( post_password_required() )
 		<h3><?php comments_number(__('没有评论','1条评论','%条评论'));?></h3>
 
 		<ol class="comment_list">
-			<?php wp_list_comments( array( 'callback' => 'tux_comment', 'style' => 'ol' ) ); ?>
+			<?php wp_list_comments( ); ?>
 		</ol>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>

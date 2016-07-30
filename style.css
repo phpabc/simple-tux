@@ -1,5 +1,5 @@
 ﻿，/*
-Theme Name: Simple Tux(企鹅主题）
+Theme Name: Simple Tux
 Theme URI: www.phpabc.cn/simple-tux.html
 Description: 响应式的博客主题
 Author: PHPABC
@@ -49,7 +49,7 @@ input[type^="radio"]{border:0;background:0;width:auto}
 #navigation{margin:0 auto;background-color:#3a6ca4;height:51px;width:1190px;
    -moz-border-radius: 3px;      /* Gecko browsers */
    -webkit-border-radius: 3px;   /* Webkit browsers */
-   border-radius: 3px            /* W3C syntax */}}
+   border-radius: 3px;            /* W3C syntax */}}
 #navigation ul,#navigation li{list-style:none;padding:0;margin:0;height:50px;display:inline;background-color:#fff}
 #navigation ul li{float:left;position:relative;}
 #navigation ul li a{display:inline-block;color:#fff;text-decoration:none;font-size:16px;padding:15px}
@@ -69,7 +69,10 @@ input[type^="radio"]{border:0;background:0;width:auto}
 #navigation .blog{display:none}
 /*导航菜单*/
 .menu-item {}
-#navigation .current-post-parent,#navigation .current-menu-item {background-color:#036;}
+#navigation .current-post-parent,#navigation .current-menu-item {background-color:#036;
+   -moz-border-radius: 3px;      /* Gecko browsers */
+   -webkit-border-radius: 3px;   /* Webkit browsers */
+   border-radius: 3px;            /* W3C syntax */}
 
 #main .h1{padding:20px;font-size:24px;margin:0 0 20px 0;background:#FFF;box-shadow:0 1px 2px 0 #CCC;-webkit-box-shadow:0 1px 2px 0 #CCC}
 .post_list{margin:20px 20px 30px 25px;border-bottom:1px solid #eee;background-color:#FFF;overflow:hidden}
@@ -123,14 +126,15 @@ ins{color:green}
 #searchsubmit:hover i{color:#FFF}
 #searchsubmit:active i{text-shadow:1px 2px 1px #f90}
 .sidebar{background-color:#FFF;box-shadow:0 1px 2px #CCC;overflow:hidden;border-bottom:2px solid #CCC}
-.widget{margin-bottom:10px;color:#666;padding:10px 10px 0 10px;overflow:hidden}
-.widget a{color:#666}
+.widget{margin-bottom:10px;color:#555;padding:10px 10px 0 10px;overflow:hidden}
+.widget a{color:#555}
 .widget a:hover{color:#F60}
 .widget h3{padding:5px 0 10px 10px;color:#333;border-bottom:3px solid #17A2E7;font-size:17px;}
 .widget ul{padding-top:10px}
 .widget ul ul,.widget .textwidget ul{border-top:0;padding-top:5px}
 .widget li{line-height:20px;padding:0 0 5px 8px;margin-bottom:5px;border-bottom:1px dashed #e0e0e0;white-space:nowrap;overflow:hidden; text-overflow: ellipsis; }
 .widget .children{background-color:#f9f9fa;margin:5px 0 0 5px;font-size:12px}
+.widget_tux_comment ul li {color:#999;}
 .widget_views-plus{font-size:12px}
 .widget_views-plus a{font-size:14px}
 .widget_views-plus li{overflow:hidden;white-space:nowrap}
@@ -145,9 +149,9 @@ ins{color:green}
 .nowrap ul li{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
 /*相关文章*/
 .related ul li{padding:5px 0 0 10px}
-.related ul li a{color:#36F;}
-.related ul li a:hover{color:#393;}
-.related ul li h3{color:#333;}
+.related ul li a{color:#444;}
+.related ul li a:hover{color:#f60;}
+.related h3{color:#111;}
 
 .pagenav {padding:10px;}
 .comment_ul li img{margin-right:5px}
@@ -185,7 +189,6 @@ ins{color:green}
 #respond .form-allowed-tags,#respond .comment-form-comment label{display:none}
 .errors_404{width:700px;height:440px;position:relative;background:url(images/404.png) no-repeat}
 .to_home{position:absolute;width:80px;height:28px;top:340px;left:310px}
-
 .to_back{position:absolute;width:100px;height:28px;top:340px;left:410px}
 #footer a{color:#gray}
 #footer a:hover{color:#gray}
@@ -194,8 +197,6 @@ ins{color:green}
 .nav-previous{float:left}
 .nav-next{float:right}
 .nav-previous a,.nav-next a{text-align:center;height:22px;line-height:24px;display:inline-block;text-decoration:none;border:1px #CCC solid;padding:0 5px}
-.google{width:1190px;margin:0 auto;padding-top:20px;overflow:hidden}
-
 /*Tux tab*/
 .widget .tab_menu{float:left;overflow:hidden;}
 .widget .tab_menu li{font-size:1.125rem;width:72px;line-height:26px;float:left;padding:0 14px;border-bottom:3px solid #C3E8FA;}
@@ -209,13 +210,13 @@ ins{color:green}
 
 /*移动设备，屏幕小于650px*/
 @media screen and (max-width:650px){html{-webkit-text-size-adjust:none}
-#navigation{height:20px;float:right;width:90px}
+#navigation{height:20px;float:right;width:90px;margin:3px 20px 0 0;}
 #navigation #nav{display:none; height:1px}
 #navigation .my,#header p,.sidebar,.meat_max,.text_add .share,.comment_meta .time,.totop{display:none}
 .selectnav{display:block;margin:0px;height:20px;}
 #wrap{border-top:0}
-#header{width:98%;background-color:#2181cb;overflow:hidden;position:fixed;box-shadow:0px #999;z-index:99;height:40px;padding:10px 5px 0 5px;}
-#header .navtop{margin:0px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;width:60%;padding:2px 0 0 2px;height:25px;float:left}
+#header{width:99%;background-color:#2181cb;overflow:hidden;position:fixed;box-shadow:0px #999;z-index:99;height:40px;padding:10px 5px 0 5px;}
+#header .navtop{margin:0px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;width:50%;padding:2px 0 0 2px;height:25px;float:left}
 #header .navtop a{color:#FFF;text-shadow:0 -1px 1px #333;font-size:16px}
 #header .navtop .logo {float:left;}
 #header .search{}
@@ -246,7 +247,6 @@ ins{color:green}
 .avatar{width:20px}
 #respond{margin:0}
 #respond input,#respond textarea{width:70%}
-.google{width:98%}
 #footer {width: 98%}
 #toptop {display: none}
 #footer .power-by {float:left;padding-right:15px;font-size:12px}

@@ -13,6 +13,10 @@
                 <?php edit_post_link('编辑', '<span class="meat_span">', '</span>'); ?>
             </div>
 			<div class="text"><?php the_content(); ?></div>
+           <?php if (get_option('tux_content_ad') == '显示') { ?>
+                <div class="content_adsense"><?php echo stripslashes(get_option('tux_content_adcode')); ?> </div>
+		   <?php { echo ''; } ?><?php } else { } ?>			
+			
 			<!--相关文章开始-->
 <div class="related">
 <h3>和本文关系暧昧的</h3>
@@ -39,7 +43,7 @@ if ($post_tags) {
         AND term_id IN (" . $tag_list . ")
         AND ID != '" . $post->ID . "'
         ORDER BY RAND()
-        LIMIT 8");
+        LIMIT 5");
         // 以上代码中的 8 为限制只获取8篇相关文章
         // 通过修改数字 8，可修改你想要的文章数量
 

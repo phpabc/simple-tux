@@ -3,8 +3,10 @@
 	&copy; <?php echo date("Y")?> <?php bloginfo('name'); ?>版权所有 
     <?php echo stripslashes(get_option('tux_icp')); ?> 
 	<?php echo stripslashes(get_option('tux_tongji')); ?>
+<?php echo get_num_queries() . ' queries in ' . timer_stop(0) . ' seconds.'; ?> 
    	<span class="power-by">	Powered by <a href="http://wordpress.org/" rel="external nofollow" target="_blank">WordPress</a>,
-    Theme by <a href="http://www.phpab.cn/tux-theme.html" title="TUX" target="_blank">PHPABC</a></span>
+    Theme by <a href="http://www.phpab.cn/simple-tux.html" title="Simple Tux" target="_blank">PHPABC</a></span>
+
 </div>
 <?php wp_footer(); ?>
 <div id="toptop">

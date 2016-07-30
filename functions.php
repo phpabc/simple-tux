@@ -8,21 +8,21 @@ add_filter( 'wp_page_menu_args', 'tux_page_menu_args' );
 function tux_widgets_init() {
 	register_sidebar(array(
 		'name' => '首页侧栏',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'before_widget' => '<div class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>',
 	));
 	register_sidebar(array(
 		'name' => '其他页侧栏',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'before_widget' => '<div class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>',
 	));
 	register_sidebar(array(
 		'name' => '内容页侧栏',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'before_widget' => '<div class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>',
@@ -301,42 +301,33 @@ $options = array (
 	"id" => $shortname."_title",
 	"type" => "text",
 	"std" => "网站标题",
-	"explain" => "SEO设置<br>它将显示在网站首页的title标签里，必填项。"
+	"explain" => "它将显示在网站首页的title标签里，必填项。"
 	),
 	array("name" => "描述（Description）",
 	"id" => $shortname."_description",
 	"type" => "textarea",
 	"css" => "class='h60px'",
 	"std" => "网站描述",
-	"explain" => "SEO设置<br>它将显示在网站首页的meta标签的description属性里"
+	"explain" => "它将显示在网站首页的meta标签的description属性里"
 	),
 	array("name" => "关键字（KeyWords）",
 	"id" => $shortname."_keywords",
 	"type" => "textarea",
 	"css" => "class='h60px'",
 	"std" => "网站关键字",
-	"explain" => "SEO设置<br>多个关键字请以英文逗号隔开，它将显示在网站首页的meta标签的keywords属性里"
+	"explain" => "多个关键字请以英文逗号隔开，它将显示在网站首页的meta标签的keywords属性里"
 	),
-	array("name" => "是否显示新浪微博",
-    "id" => $shortname."_weibo",
+	array("name" => "是否显示文章页内广告",
+    "id" => $shortname."_content_ad",
     "type" => "select",
     "std" => "隐藏",
     "options" => array("隐藏", "显示")),
-	array("name" => "新浪微博地址",
-    "id" => $shortname."_weibo_url",
-    "type" => "text",
-    "std" => "http://weibo.com/782622",
-	"explain" => "请输入您的新浪微博地址"),
-	array("name" => "是否显示腾讯微博",
-    "id" => $shortname."_tqq",
-    "type" => "select",
-    "std" => "隐藏",
-    "options" => array("隐藏", "显示")),
-	array("name" => "腾讯微博地址",
-    "id" => $shortname."_tqq_url",
-    "type" => "text",
-    "std" => "http://t.qq.com/tangjie",
-	"explain" => "请输入您的腾讯微博地址"),
+	array("name" => "文章页广告",
+	"id" => $shortname."_content_adcode",
+	"type" => "textarea",
+	"css" => "class='h80px'",
+	"explain" => "文章页广告"
+	),
 	array("name" => "版权年份",
 	"id" => $shortname."_years",
 	"std" => "2012",
