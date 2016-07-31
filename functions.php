@@ -345,6 +345,12 @@ $options = array (
 	"css" => "class='h80px'",
 	"explain" => "请在此处输入您的分享代码，来自第三方或者您自己的代码，它将显示在文章的结尾处，如果没有请留空<br>第三方分享工具主要有：百度分享、JiaThis、BShare 等等"
 	),
+	array("name" => "头部Head 区代码",
+	"id" => $shortname."_head_code",
+	"type" => "textarea",
+	"css" => "class='h80px'",
+	"explain" => "Head 区代码，如添加meta信息验证网站所有权。"
+	),
 	array("name" => "统计代码",
 	"id" => $shortname."_tongji",
 	"type" => "textarea",

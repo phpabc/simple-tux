@@ -49,7 +49,7 @@ if ( is_single() ){
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/favicon.ico" type="image/x-icon" />
-<script src="<?php bloginfo('template_directory'); ?>/jquery.min.js"></script>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/tux.js"></script>
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
@@ -58,6 +58,7 @@ if ( is_single() ){
 	wp_enqueue_script( 'comment-reply' );
 	wp_head();
 ?>
+<?php echo stripslashes(get_option('tux_head_code')); ?>
 </head>
 
 <body <?php body_class(); ?>>
