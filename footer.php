@@ -8,7 +8,6 @@
 
 </div>
 <?php wp_footer(); ?>
-<div id="toptop">
 <div id="totop" class="totop"><i class="iconfont">&#xe810;</i>回顶部</div>
 <script type="text/javascript">
 	$(window).scroll(function () {

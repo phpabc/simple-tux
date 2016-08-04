@@ -156,7 +156,7 @@ ins{color:green}
 .related ul li a{color:#444;}
 .related ul li a:hover{color:#f60;}
 .related h3{color:#4169E1;}
-
+#article code{font-family:Courier;color:#139;background:#EEF;padding:3px 6px;margin:0 3px;text-shadow:1px 1px 1px #FFF;}
 .pagenav {padding:10px;}
 .comment_ul li img{margin-right:5px}
 .comment_ul li a{font-size:13px}

@@ -44,8 +44,8 @@ if ($post_tags) {
         AND ID != '" . $post->ID . "'
         ORDER BY RAND()
         LIMIT 5");
-        // 以上代码中的 8 为限制只获取8篇相关文章
-        // 通过修改数字 8，可修改你想要的文章数量
+        // 以上代码中的 5 为限制只获取8篇相关文章
+        // 通过修改数字 5，可修改你想要的文章数量
 
     if ( $related_posts ) {
         foreach ($related_posts as $related_post) {

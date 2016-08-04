@@ -197,7 +197,7 @@ function colorCloud($text) {
 }
 function colorCloudCallback($matches) {
  $text = $matches[1];
- $colors = array('F99','C9C','F96','6CC','6C9','37A7FF','B0D686','E6CC6E');  
+ $colors = array('428BCA','D9534F','567E95','4A4A4A','6E8B3D','B37333','B433FF','5CB85C');  
  $color=$colors[dechex(rand(0,7))];  $pattern = '/style=(\'|\")(.*)(\'|\")/i';
  $text = preg_replace($pattern, "style=\"color:#{$color};$2;border: 1px solid #{$color};padding: 4px 6px;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;margin-right:4px;\"", $text);
  return "<a $text>";
@@ -260,6 +260,15 @@ function catch_that_image() {
 	return $first_img;
 }
 
+//添加编辑器快捷按钮
+add_action('admin_print_scripts', 'my_quicktags');
+function my_quicktags() {
+    wp_enqueue_script(
+        'my_quicktags',
+        get_stylesheet_directory_uri().'/my_quicktags.js',
+        array('quicktags')
+    );
+    }; 
 
 // 评论回应邮件通知
 function comment_mail_notify($comment_id) {
