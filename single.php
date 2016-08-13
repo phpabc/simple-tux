@@ -4,16 +4,16 @@
 		<div id="article">
 			<h1><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
 			<div class="info">
-				<span class="meat_span"><i class="iconfont">&#xe800;</i><?php the_author() ?></span>
-				<span class="meat_span"><i class="iconfont">&#xe809;</i><?php the_category(', ') ?></span>
-				<span class="meat_span"><i class="iconfont">&#xe80c;</i><?php the_time('Y-m-d'); ?></span>
-				<span class="meat_span"><i class="iconfont">&#xe819;</i><?php post_views(' ', ' 次浏览'); ?></span>				
-				<span class="meat_span meat_max"><i class="iconfont">&#xe805;</i><?php the_tags('', ', ', ''); ?></span>
-                <span class="meat_span"><i class="iconfont">&#xe808;</i><?php comments_popup_link ('没有评论','1条评论','%条评论'); ?></span>
+				    <span class="meat_span"><i class="iconfont">&#xe611;</i><?php the_author() ?></span>
+					<span class="meat_span"><i class="iconfont">&#xe60f;</i><?php the_category(', ') ?></span>
+					<span class="meat_span"><i class="iconfont">&#xe614;</i><?php the_time('Y-m-d'); ?></span>
+					<span class="meat_span"><i class="iconfont">&#xe608;</i><?php post_views(' ', ' 次浏览'); ?></span>					
+                    <span class="meat_span meat_max"><i class="iconfont">&#xe605;</i><?php the_tags('', ', ', ''); ?></span>
+                <span class="meat_span"><i class="iconfont">&#xe604;</i><?php comments_popup_link ('没有评论','1条评论','%条评论'); ?></span>
                 <?php edit_post_link('编辑', '<span class="meat_span">', '</span>'); ?>
             </div>
 			<div class="text"><?php the_content(); ?></div>
-           <?php if (get_option('tux_content_ad') == '显示') { ?>
+           <?php if (get_option('tux_content_ad') == 'tux_content_ad_1') { ?>
                 <div class="content_adsense"><?php echo stripslashes(get_option('tux_content_adcode')); ?> </div>
 		   <?php { echo ''; } ?><?php } else { } ?>			
 			

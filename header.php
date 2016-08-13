@@ -50,7 +50,7 @@ if ( is_single() ){
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/favicon.ico" type="image/x-icon" />
 <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
-<script src="<?php bloginfo('template_directory'); ?>/tux.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/js/tux.js"></script>
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php

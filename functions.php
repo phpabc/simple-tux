@@ -1,4 +1,9 @@
 <?php
+//加载小工具
+include ('inc/theme-widgets.php');
+//加载主题后台配置
+include ('inc/theme-options.php');
+
 function tux_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
@@ -34,8 +39,6 @@ if ( ! function_exists( 'tux_content_nav' ) ) :
 
 register_nav_menus(array('header-menu' => __( 'Simple Tux导航菜单' ),));
 
-//加载小工具
-include ('theme-widgets.php');
 
 //文章浏览次数统计
 function record_visitors()
@@ -265,7 +268,7 @@ add_action('admin_print_scripts', 'my_quicktags');
 function my_quicktags() {
     wp_enqueue_script(
         'my_quicktags',
-        get_stylesheet_directory_uri().'/my_quicktags.js',
+        get_stylesheet_directory_uri().'/js/my_quicktags.js',
         array('quicktags')
     );
     }; 
@@ -300,165 +303,4 @@ function comment_mail_notify($comment_id) {
   }
 }
 add_action('comment_post', 'comment_mail_notify');
-
-?>
-<?php
-$themename = "Simple-Tux";
-$shortname = "tux";
-$options = array (
-	array("name" => "标题（Title)",
-	"id" => $shortname."_title",
-	"type" => "text",
-	"std" => "网站标题",
-	"explain" => "它将显示在网站首页的title标签里，必填项。"
-	),
-	array("name" => "描述（Description）",
-	"id" => $shortname."_description",
-	"type" => "textarea",
-	"css" => "class='h60px'",
-	"std" => "网站描述",
-	"explain" => "它将显示在网站首页的meta标签的description属性里"
-	),
-	array("name" => "关键字（KeyWords）",
-	"id" => $shortname."_keywords",
-	"type" => "textarea",
-	"css" => "class='h60px'",
-	"std" => "网站关键字",
-	"explain" => "多个关键字请以英文逗号隔开，它将显示在网站首页的meta标签的keywords属性里"
-	),
-	array("name" => "是否显示文章页内广告",
-    "id" => $shortname."_content_ad",
-    "type" => "select",
-    "std" => "隐藏",
-    "options" => array("隐藏", "显示")),
-	array("name" => "文章页广告",
-	"id" => $shortname."_content_adcode",
-	"type" => "textarea",
-	"css" => "class='h80px'",
-	"explain" => "文章页广告"
-	),
-	array("name" => "版权年份",
-	"id" => $shortname."_years",
-	"std" => "2012",
-	"type" => "text",
-	"explain" => "它将显示在页面底部"
-	),
-	array("name" => "ICP备案号",
-	"id" => $shortname."_icp",
-	"type" => "text",
-	"explain" => "页面底部可以显示 ICP 备案信息，如果网站已备案，在此输入您的备案号，它将显示在页面底部，如果没有请留空"
-	),
-	array("name" => "分享代码",
-	"id" => $shortname."_share",
-	"type" => "textarea",
-	"css" => "class='h80px'",
-	"explain" => "请在此处输入您的分享代码，来自第三方或者您自己的代码，它将显示在文章的结尾处，如果没有请留空<br>第三方分享工具主要有：百度分享、JiaThis、BShare 等等"
-	),
-	array("name" => "头部Head 区代码",
-	"id" => $shortname."_head_code",
-	"type" => "textarea",
-	"css" => "class='h80px'",
-	"explain" => "Head 区代码，如添加meta信息验证网站所有权。"
-	),
-	array("name" => "统计代码",
-	"id" => $shortname."_tongji",
-	"type" => "textarea",
-	"css" => "class='h80px'",
-	"explain" => "页面底部可以显示第三方统计<br>您可以放一个或者多个统计代码"
-	),
-);
-function mytheme_add_admin() {
-    global $themename, $shortname, $options;
-    if ( $_GET['page'] == basename(__FILE__) ) {
-        if ( 'save' == $_REQUEST['action'] ) {
-            foreach ($options as $value) {
-            update_option( $value['id'], $_REQUEST[ $value['id'] ] ); }
-            foreach ($options as $value) {
-            if( isset( $_REQUEST[ $value['id'] ] ) ) { update_option( $value['id'], $_REQUEST[ $value['id'] ]  ); } else { delete_option( $value['id'] ); } }
-            header("Location: themes.php?page=functions.php&saved=true");
-            die;
-        } else if( 'reset' == $_REQUEST['action'] ) {
-            foreach ($options as $value) {
-                delete_option( $value['id'] );
-                update_option( $value['id'], $value['std'] );
-            }
-            header("Location: themes.php?page=functions.php&reset=true");
-            die;
-        }
-    }
-    add_theme_page($themename." 设置", "$themename 设置", 'edit_themes', basename(__FILE__), 'mytheme_admin');
-}
-function mytheme_admin() {
-    global $themename, $shortname, $options;
-    if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' 设置已保存。</strong></p></div>';
-    if ( $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' 设置已重置。</strong></p></div>';
-?>
-
-<style type="text/css">
-.wrap h2 {color:#09C;}
-.themeadmin {border:1px dashed #999;margin-top:20px;width:420px;position:10px;}
-.options {margin-top:20px;}
-.options input,.options textarea {padding:2px;border:1px solid;border-color:#666 #CCC #CCC #666;background:#F9F9F9;color:#333;resize:none;width:400px;}
-.options .h80px {height:80px;}
-.options .h60px {height:60px;}
-.options .setup {border-top:1px dotted #CCC;padding:10px 0 10px 10px;overflow:hidden;}
-.options .setup h3 {font-size:14px;margin:0;padding:0;}
-.options .setup .value {float:left;width:410px;}
-.options .setup .explain {float:left;}
-</style>
-<div class="wrap">
-	<h2><b>Simple-Tux主题设置</b></h2>
-    <hr />
-	<div>主题作者：<a href="http://www.phpabc.cn/" target="_blank">PHPABC</a> ¦ 当前版本：V1.0 ¦ 主题介绍、使用帮助及升级请访问：<a href="http://www.phpabc.cn/simple-tux.html" title="TUX" target="_blank">http://www.phpabc.cn/simple-tux.html</a></div>
-<form method="post">
-<div class="options">
-<?php foreach ($options as $value) {
-	if ($value['type'] == "text") { ?>
-	<div class="setup">
-		<h3><?php echo $value['name']; ?></h3>
-    	<div class="value"><input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if ( get_settings( $value['id'] ) != "") { echo stripslashes(get_settings( $value['id']) ); } else { echo $value['std']; } ?>" /></div>
-    	<div class="explain"><?php echo $value['explain']; ?></div>
-	</div>
-	<?php } elseif ($value['type'] == "textarea") { ?>
-	<div class="setup">
-    	<h3><?php echo $value['name']; ?></h3>
-        <div class="value"><textarea name="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" <?php echo $value['css']; ?> ><?php if ( get_settings( $value['id'] ) != "") { echo stripslashes(get_settings( $value['id']) ); } else { echo $value['std']; } ?></textarea></div>
-        <div class="explain"><?php echo $value['explain']; ?></div>
-    </div>
-    <?php } elseif ($value['type'] == "select") { ?>
-	<div class="setup">
-    	<h3><?php echo $value['name']; ?></h3>
-        <div class="value">
-<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>"><?php foreach ($value['options'] as $option) { ?>
-		<option value="<?php echo $option;?>" <?php if (get_settings( $value['id'] ) == $option) { echo 'selected="selected"'; } ?>>
-		<?php
-		if ((empty($option) || $option == '' ) && isset($value['option'])) {
-			echo $value['option'];
-		} else {
-			echo $option; 
-		}?></option><?php } ?>
-</select>
-        </div>
-        <div class="explain"><?php echo $value['explain']; ?></div>
-    </div>
-	<?php } ?>
-<?php } ?>
-</div>
-<div class="submit">
-<input style="font-size:12px !important;" name="save" type="submit" value="保存设置" class="button-primary" />
-<input type="hidden" name="action" value="save" />
-</div>
-</form>
-
-<form method="post">
-	<div style="margin:50px 0;border-top:1px solid #F00;padding-top:10px;">
-    <input style="font-size:12px !important;" name="reset" type="submit" value="还原默认设置" />
-    <input type="hidden" name="action" value="reset" />
-    </div>
-</form>
-
-</div>
-<?php
-}
-add_action('admin_menu', 'mytheme_add_admin');
 ?>
