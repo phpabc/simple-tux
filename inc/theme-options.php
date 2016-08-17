@@ -96,7 +96,7 @@ $options = array(
         'type'  => 'panelstart'
     ),
     array(
-        'title' => '社交小图标，空置默认为不启用，建议别超过六个',
+        'title' => '社交小图标，空置为不启用，建议数量用6个',
         'type'  => 'subtitle'
     ),
     array(

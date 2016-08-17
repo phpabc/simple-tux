@@ -21,11 +21,11 @@
                 <?php if ( has_post_thumbnail() ) { ?> <div class="thumbnail"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"> <?php the_post_thumbnail(); ?></a></div> <?php } ?> 	
 				<div class="excerpt">
 					<div class="meta">
-				    <span class="meat_span"><i class="iconfont">&#xe611;</i><?php the_author() ?></span>
-					<span class="meat_span"><i class="iconfont">&#xe60f;</i><?php the_category(', ') ?></span>
-					<span class="meat_span"><i class="iconfont">&#xe614;</i><?php the_time('Y-m-d'); ?></span>
-					<span class="meat_span"><i class="iconfont">&#xe608;</i><?php post_views(' ', ' 次浏览'); ?></span>					
-                    <span class="meat_span meat_max"><i class="iconfont">&#xe605;</i><?php the_tags('', ', ', ''); ?></span>
+				    <span class="meat_span"><i class="iconfont">&#xe629;</i><?php the_author() ?></span>
+					<span class="meat_span"><i class="iconfont">&#xe625;</i><?php the_category(', ') ?></span>
+					<span class="meat_span"><i class="iconfont">&#xe62a;</i><?php the_time('Y-m-d'); ?></span>
+					<span class="meat_span"><i class="iconfont">&#xe61f;</i><?php post_views(' ', ' 次浏览'); ?></span>					
+                    <span class="meat_span meat_max"><i class="iconfont">&#xe62e;</i><?php the_tags('', ', ', ''); ?></span>
                     </div>	
                 	<div class="content_text"><?php echo mb_strimwidth(strip_tags(apply_filters('content', $post->post_content)), 0, 220,"..."); ?></div>
 				</div>

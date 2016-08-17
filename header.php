@@ -69,7 +69,7 @@ if ( is_single() ){
 	<div class="search">
 	    <form id="searchform" method="get" action="<?php bloginfo('home'); ?>">
 		    <input type="text" value="<?php the_search_query(); ?>" name="s" id="s" size="30" x-webkit-speech />
-			<button type="submit" id="searchsubmit"><i class="iconfont">&#xe815;</i></button>
+			<button type="submit" id="searchsubmit"><i class="iconfont">&#xe610;</i></button>
 		</form>
 	</div>	
 	</div>

@@ -8,7 +8,7 @@
 
 </div>
 <?php wp_footer(); ?>
-<div id="totop" class="totop"><i class="iconfont">&#xe810;</i>回顶部</div>
+<div id="totop" class="totop"><i class="iconfont">&#xe61d;</i>回顶部</div>
 <script type="text/javascript">
 	$(window).scroll(function () {
         var dt = $(document).scrollTop();
