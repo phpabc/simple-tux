@@ -19,7 +19,7 @@ class tux_social extends WP_Widget {
         echo '<div class="wid_social">';
         if (get_option('tux_weibo')) echo '<a href="' . get_option('tux_weibo') . '" rel="external nofollow" title="新浪微博" target="_blank"><i class="iconfont_social weibo">&#xe607;</i></a>';
         if (get_option('tux_tqq')) echo '<a  href="' . get_option('tux_tqq') . '" rel="external nofollow" title="腾讯微博" target="_blank"><i class="iconfont_social tweibo">&#xe621;</i></a>';
-        if (get_option('tux_git')) echo '<a href="' . get_option('tux_git') . '" rel="external nofollow" title="GitHub" target="_blank"><i class="iconfont_social github">&#xe620;</i></a>';
+        if (get_option('tux_github')) echo '<a href="' . get_option('tux_github') . '" rel="external nofollow" title="GitHub" target="_blank"><i class="iconfont_social github">&#xe620;</i></a>';
         if (get_option('tux_baidu')) echo '<a href="' . get_option('tux_baidu') . '" rel="external nofollow" title="百度贴吧" target="_blank"><i class="iconfont_social baidu">&#xe60d;</i></a>';
         if (get_option('tux_google')) echo '<a href="' . get_option('tux_google') . '" rel="external nofollow" title="Google +" target="_blank"><i class="iconfont_social google+">&#xe60f;</i></a>';
         if (get_option('tux_weixin')) echo '<a class="weixin"><i class="iconfont_social weixin">&#xe619;</i><div class="weixin-popover"><div class="popover bottom in"><div class="popover-title">订阅号“' . get_option('tux_weixin') . '”</div><div class="popover-content"><img width="200px" height="200px" src="' . get_option('tux_weixin_qr') . '" ></div></div></div></a>';		
@@ -37,4 +37,4 @@ class tux_social extends WP_Widget {
 		<p>显示一组社交图标，详细设置请至主题后台设置</p>
 <?php
     }
-}
+}?>

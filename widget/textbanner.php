@@ -65,4 +65,4 @@ class tux_textbanner extends WP_Widget {
 		</p>
 <?php
     }
-}
+}?>

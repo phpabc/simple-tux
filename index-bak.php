@@ -1,5 +1,18 @@
 <?php get_header(); ?>
   <div id="main">
+    <div id="top-content">
+	 <div class="pic left">
+	 <a href="#"><img src="/uploads/2016/06/210303_NUqK_241670-1-768x387.png" alt="test" /></a>
+	 </div>
+     <div class="pic right">
+	  <ul>
+	   <li class="post-rec"><a href="#"><img src="/uploads/2016/05/wp_options-2-220x146.png" alt="test" /></a></li>
+	   <li class="post-rec"><a href="#"><img src="/uploads/2016/05/wp_options-2-220x146.png" alt="test" /></a></li>
+	   <li class="post-rec"><a href="#"><img src="/uploads/2016/05/wp_options-2-220x146.png" alt="test" /></a></li>
+	   <li class="post-rec"><a href="#"><img src="/uploads/2016/05/wp_options-2-220x146.png" alt="test" /></a></li>
+	  </div>
+     </ul>	  
+	</div>
 	<div id="posts">
 			<?php while ( have_posts() ) : the_post(); ?>
 		<div class="post_list">

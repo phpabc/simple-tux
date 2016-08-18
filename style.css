@@ -295,7 +295,7 @@ ins{color:green}
 }
 
 /*移动设备，屏幕小于650px*/
-@media screen and (max-width:650px){html{-webkit-text-size-adjust:none}
+@media screen and (max-width:850px){html{-webkit-text-size-adjust:none}
 #navigation{height:20px;float:right;width:90px;margin:3px 20px 0 0;}
 #navigation #nav{display:none; height:1px}
 #navigation .my,#header p,.sidebar,.meat_max,.text_add .share,.comment_meta .time,.totop{display:none}
