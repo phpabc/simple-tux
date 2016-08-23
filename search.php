@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 	<div id="main">
+		<div id="posts">
 		<h1 class="h1"><?php _e("Search"); ?>: <?php the_search_query(); ?></h1>
 		<?php while ( have_posts() ) : the_post(); ?>
 		<div class="post_list">
@@ -22,6 +23,6 @@
 		</div>
 		<?php endwhile; ?>
 		<div class="navigation"><?php pagination($query_string); ?></div>
-	</div>
+	</div></div>
 	<?php get_sidebar(); ?>
 <?php get_footer(); ?>

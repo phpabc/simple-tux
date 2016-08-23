@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 	<div id="main">
+		<div id="posts">
 		<?php while ( have_posts() ) : the_post(); ?>
 		<div class="post_list">
 			<?php if ( is_sticky() ) : ?>
@@ -21,6 +22,6 @@
 		</div>
 		<?php endwhile; ?>
 		<div class="navigation"><?php pagination($query_string); ?></div>
-	</div>
+	</div></div>
 	<?php get_sidebar('category'); ?>
 <?php get_footer(); ?>

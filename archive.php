@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 	<div id="main">
+		<div id="posts">
 		<?php if ( is_day() ) : ?>
 			<h1 class="h1"><?php printf( __( 'Daily: %s' ), '<span>' . get_the_date() . '</span>' ); ?></h1>
 		<?php elseif ( is_month() ) : ?>
@@ -33,6 +34,6 @@
 		</div>
 		<?php endwhile; ?>
 		<div class="navigation"><?php pagination($query_string); ?></div>
-	</div>
+	</div></div>
 	<?php get_sidebar(); ?>
 <?php get_footer(); ?>

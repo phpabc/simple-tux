@@ -36,9 +36,9 @@ input[type^="radio"]{border:0;background:0;width:auto}
 .alignright{display:inline;float:right;margin-left:1.625em}
 .aligncenter{clear:both;display:block;margin-left:auto;margin-right:auto}
 #header{margin:0 auto;}
-#content{width:1330px;margin:0 auto;padding-top:20px;overflow:hidden;padding-bottom:20px;border-top:1px solid #f6f6f6}
-#main {width:74%;float:left;overflow:hidden;}
-#posts{width:99%;float:left;background-color:#fff; overflow:hidden; border: 1px solid #ddd;
+#content{max-width:1300px;margin:0 auto;padding-top:20px;overflow:hidden;padding-bottom:20px;border-top:1px solid #f6f6f6}
+#main {width:100%;float:left;margin:auto;}
+#posts{margin-right:335px;float:none;background-color:#fff; overflow:hidden; border: 1px solid #ddd;
     -moz-border-radius: 3px;      /* Gecko browsers */
     -webkit-border-radius: 3px;   /* Webkit browsers */
     border-radius: 3px            /* W3C syntax */}
@@ -50,22 +50,22 @@ input[type^="radio"]{border:0;background:0;width:auto}
 .pic a {bord:1px solid #111;}	
 #top-content .pic{display:inline;width:50%;overflow:hidden;height:300px;float:left;}
 #top-content .post-rec {width:25%;display:inline}
-#sidebar{width:25%;float:right;overflow:hidden;}
-#footer{text-align:left;font-size:12px;width:1330px;margin: 0 auto;background-color:#fff;padding:15px 0 15px 8px;border: 1px solid #ddd;
+#sidebar{margin-left:-330px;width:325px;float:right;overflow:hidden;}
+#footer{text-align:left;font-size:12px;max-width:1300px;margin: 0 auto;background-color:#fff;padding:15px 0 15px 8px;border: 1px solid #ddd;
     -moz-border-radius: 3px;      /* Gecko browsers */
     -webkit-border-radius: 3px;   /* Webkit browsers */
     border-radius: 3px            /* W3C syntax */}
 #footer .power-by {float:right;padding-right:15px;font-size:12px}
-#header .navtop{line-height:26px;font-size:14px;width:1330px;margin:0 auto;padding:20px 0 20px 0px;height:48px}
+#header .navtop{line-height:26px;font-size:14px;max-width:1300px;margin:0 auto;padding:20px 0 20px 0px;height:48px}
 #header .navtop a{color:#06C;text-shadow:2px 2px 1px #CCC;font-size:28px}
 #header .logo {float:left}
 #header .search {float:right;width:300px}
 .selectnav{display:none;cursor:pointer;margin:12px 10px 0 0;font-size:12px;width:90px}
-#navigation{margin:0 auto;background-color:#3a6ca4;height:51px;width:1330px;
+#navigation{margin:0 auto;background-color:#3a6ca4;height:51px;max-width:1300px;
    -moz-border-radius: 3px;      /* Gecko browsers */
    -webkit-border-radius: 3px;   /* Webkit browsers */
    border-radius: 3px;            /* W3C syntax */}}
-#navigation ul,#navigation li{list-style:none;padding:0;margin:0;height:50px;display:inline;background-color:#fff}
+#navigation ul,#navigation li{overflow:hidden;list-style:none;padding:0;margin:0;height:50px;display:inline;background-color:#fff}
 #navigation ul li{float:left;position:relative;}
 #navigation ul li a{display:inline-block;color:#fff;text-decoration:none;font-size:16px;padding:15px}
 #navigation ul li a:hover{background:#999;color:#FFF;-webkit-transition:all .1s ease-in-out;-moz-transition:all .1s ease-in-out;-o-transition:all .1s ease-in-out;-ms-transition:all .1s ease-in-out;transition:all .1s ease-in-out}
@@ -112,7 +112,10 @@ input[type^="radio"]{border:0;background:0;width:auto}
 .pagination a:hover{color:#333;border:1px solid #888;text-decoration:none;background:#f0f0f0}
 .pagination .page_previous,.pagination .page_next{width:70px;height:22px;text-align:center}
 .pagination .fir_las{width:36px;height:22px;text-align:center}
-#article{margin-bottom:20px;padding:20px 30px 10px 30px;background-color:#FFF;box-shadow:0 1px 2px 0 #CCC;overflow:hidden}
+#article{margin-bottom:20px;padding:20px 30px 10px 30px;background-color:#FFF;box-shadow:0 1px 2px 0 #CCC;overflow:hidden;border:1px solid #ccc;margin-right:335px;float:none;
+   -moz-border-radius: 3px;      /* Gecko browsers */
+   -webkit-border-radius: 3px;   /* Webkit browsers */
+   border-radius: 3px;            /* W3C syntax */}
 #article h1{font-size:26px;line-height:30px;padding-bottom:10px}
 .text{margin:10px 0;color:#333;font-size:14px}
 .text b,.text strong{font-weight:600}
@@ -224,7 +227,7 @@ ins{color:green}
 .wid_social{margin:8px 0 5px 0px}
 .tux_social{padding:6px 1px 6px 2px}
 .iconfont_social{font-family:"iconfont";font-size:1.5em;font-style:normal}
-.wid_social a {font-size:2em;overflow:hidden;color:#fff;background-color:#aaa;margin-left:8px;
+.wid_social a {font-size:1.9em;overflow:hidden;color:#fff;background-color:#aaa;margin-left:9px;
     -moz-border-radius: 5px;      /* Gecko browsers */
     -webkit-border-radius: 5px;   /* Webkit browsers */
     border-radius: 5px            /* W3C syntax */}
@@ -286,22 +289,22 @@ ins{color:green}
 	background-color:#fff;
 }
 
-/*屏幕小于980px*/
-@media screen and (max-width:980px){#header,#content,#footer,.google{width:96%}
+/*屏幕小于980px
+@media screen and (max-width:980px){#header,#content,#footer,.google{width:98%}
 #header .navtop,#navigation{width:100%}
 #s{width:60%}
 .text_add .share{display:none}
 .widget .tab_menu li {float:auto;width:98%}
-}
+}*/
 
-/*移动设备，屏幕小于650px*/
-@media screen and (max-width:850px){html{-webkit-text-size-adjust:none}
+/*移动设备，屏幕小于800px*/
+@media screen and (max-width:800px){html{-webkit-text-size-adjust:none}
 #navigation{height:20px;float:right;width:90px;margin:3px 20px 0 0;}
 #navigation #nav{display:none; height:1px}
 #navigation .my,#header p,.sidebar,.meat_max,.text_add .share,.comment_meta .time,.totop{display:none}
 .selectnav{display:block;margin:0px;height:20px;}
 #wrap{border-top:0}
-#header{width:99%;background-color:#2181cb;overflow:hidden;position:fixed;box-shadow:0px #999;z-index:99;height:40px;padding:10px 5px 0 5px;}
+#header{width:99%;background-color:#2181cb;overflow:hidden;box-shadow:0px #999;z-index:99;height:40px;padding:10px 5px 0 5px;}
 #header .navtop{margin:0px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;width:50%;padding:2px 0 0 2px;height:25px;float:left}
 #header .navtop a{color:#FFF;text-shadow:0 -1px 1px #333;font-size:16px}
 #header .navtop .logo {float:left;}
@@ -320,7 +323,7 @@ ins{color:green}
 .thumbnail img{display:block;width:120px;height:90px}
 #sidebar{width:98%;float:none;overflow:hidden;margin:0 auto}
 #search{margin:20px 0 10px 0}
-#article{margin-bottom:20px;padding:10px 10px 5px 10px}
+#article{margin-right:0px;margin-bottom:20px;padding:10px 10px 5px 10px;}
 #article .meat_span{width:40%;float:left}
 #article h1{font-size:20px}
 #article .info{width:98%;overflow:hidden;border-bottom:1px dashed #CCC;padding-bottom:3px}
