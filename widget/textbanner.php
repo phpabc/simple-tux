@@ -20,8 +20,8 @@ class tux_textbanner extends WP_Widget {
         $lank = '';
         if ($blank) $lank = ' target="_blank"';
         echo $before_widget;
+		echo '<h3>' . $title . '</h3>';
         echo '<a href="' . $link . '"' . $lank . '>';
-        echo '<h3>' . $title . '</h3>';
         echo '<p>' . $content . '</p>';
         echo '</a>';
         echo $after_widget;
