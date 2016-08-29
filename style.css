@@ -61,7 +61,7 @@ input[type^="radio"]{border:0;background:0;width:auto}
 #header .logo {float:left}
 #header .search {float:right;width:300px}
 .selectnav{display:none;cursor:pointer;margin:12px 10px 0 0;font-size:12px;width:90px}
-#navigation{margin:0 auto;background-color:#3a6ca4;height:51px;max-width:1300px;
+#navigation{margin:0 auto;background-color:#3a6ca4;height:51px;max-width:1300px;overflow: hidden;
    -moz-border-radius: 3px;      /* Gecko browsers */
    -webkit-border-radius: 3px;   /* Webkit browsers */
    border-radius: 3px;            /* W3C syntax */}}
@@ -90,15 +90,15 @@ input[type^="radio"]{border:0;background:0;width:auto}
    border-radius: 3px;            /* W3C syntax */}
 
 #posts .h1{padding:20px;font-size:24px;margin:0 0 20px 0;background:#FFF;box-shadow:0 1px 2px 0 #CCC;-webkit-box-shadow:0 1px 2px 0 #CCC}
-.post_list{padding:20px 20px 10px 25px;border-bottom:1px solid #eee;background-color:#FFF;overflow:hidden;position:relative;}
+.post_list{padding:20px 20px 10px 20px;border-bottom:1px solid #eee;background-color:#FFF;overflow:hidden;position:relative;}
 .post_list:hover{background-color:#fafcfc}
-.post_list h2{padding:2px 0 4px 0;overflow:hidden;text-overflow:ellipsis}
+.post_list h2{overflow:hidden;text-overflow:ellipsis}
 .post_list h2 a{color:#444;font-size:20px;overflow:hidden;white-space:nowrap}
 .post_list h2 a:hover{color:#17A2E7;text-decoration:none}
 .info{color:#999;font-size:12px;margin:0 0 10px 0}
 .info a{color:#999}
 .info a:hover{color:#F60}
-.excerpt{margin-bottom:12px;line-height:26px;letter-spacing: 0.5px;font-size:14px;color:#777;position:relative;}
+.excerpt{margin-bottom:12px;line-height:26px;letter-spacing: 0.5px;font-size:15px;color:#777;position:relative;}
 .meta{font-size:12px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:#999;border-bottom:1px dashed #EEE;padding:2px 0 2px 0;}
 .meat_span{margin-right:15px}
 .meta a{color:#999}
@@ -107,7 +107,7 @@ input[type^="radio"]{border:0;background:0;width:auto}
 .thumbnail img{display:block;width:240px;height:140px}
 .thumbnail:hover{background:#e0e0e0}
 .more{padding-left:20px}
-.navigation{float:left;padding:0px 0px 15px 20px;}
+.navigation{float:left;padding:15px 0px 15px 20px;}
 .pagination span,.pagination a{width:22px;height:22px;text-align:center;line-height:24px;margin:0 2px 0 2px;display:inline-block;text-decoration:none;border:1px #CCC solid}
 .pagination .current{height:22px;width:22px;color:#F60;border:1px solid #CCC;font-weight:bold;background:#f0f0f0}
 .pagination a:hover{color:#333;border:1px solid #888;text-decoration:none;background:#f0f0f0}
@@ -118,7 +118,7 @@ input[type^="radio"]{border:0;background:0;width:auto}
    -webkit-border-radius: 3px;   /* Webkit browsers */
    border-radius: 3px;            /* W3C syntax */}
 #article h1{font-size:26px;line-height:30px;padding-bottom:10px}
-.text{margin:10px 0;color:#333;font-size:16px}
+.text{margin:10px 0;color:#444;font-size:15px}
 .text b,.text strong{font-weight:600}
 .text p{text-indent:2px;padding-bottom:10px;line-height:26px}
 .text h5{font-size:14px;border:1px dashed #DDD;background:#f1f1f1;padding:4px 10px}
@@ -177,7 +177,7 @@ ins{color:green}
 .related ul li{padding:5px 0 0 10px}
 .related ul li a{color:#444;}
 .related ul li a:hover{color:#f60;}
-.related h3{color:#4169E1;}
+.related h3{color:#09C;	main:8px;}
 #article code{font-family:Courier;color:#139;background:#EEF;padding:3px 6px;margin:0 3px;text-shadow:1px 1px 1px #FFF;}
 .pagenav {padding:10px;}
 .comment_ul li img{margin-right:5px}
@@ -305,28 +305,31 @@ ins{color:green}
 #navigation .my,#header p,.sidebar,.meat_max,.text_add .share,.comment_meta .time,.totop{display:none}
 .selectnav{display:block;margin:0px;height:20px;}
 #wrap{border-top:0}
-#header{width:99%;background-color:#2181cb;overflow:hidden;box-shadow:0px #999;z-index:99;height:40px;padding:10px 5px 0 5px;}
-#header .navtop{margin:0px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;width:50%;padding:2px 0 0 2px;height:25px;float:left}
+#header{width:98%;background-color:#2181cb;overflow:hidden;box-shadow:0px #999;z-index:99;height:30px;padding:5px 5px 0 5px;
+	-moz-border-radius: 4px;      /* Gecko browsers */
+    -webkit-border-radius: 4px;   /* Webkit browsers */
+    border-radius: 4px   }
+#header .navtop{margin-bottom:2px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;width:50%;padding:2px 0 0 2px;height:25px;float:left}
 #header .navtop a{color:#FFF;text-shadow:0 -1px 1px #333;font-size:16px}
 #header .navtop .logo {float:left;}
 #header .search{}
-#content{width:98%}
-#main {width:99%}
-#posts{width:98%;float:none;overflow:hidden;margin:0 auto;}
+#content{width:100%;padding-top:10px;}
+#main {width:100%}
+#posts{width:100%;float:none;overflow:hidden;margin:0 auto;}
 .thumbnail{margin:8px 6px 0px 0px}
-.post_list{margin:5px 10px 10px 10px;}
-.post_list h2{padding:0px;}
-.post_list h2 a{font-size:16px}
+.post_list{padding:2px 8px;}
+.post_list h2{padding-top:5px;}
+.post_list h2 a{font-size:16px;}
 .info{margin:0}
-.excerpt{height:80px;overflow:hidden;font-size:12px;line-height:16px;margin-bottom:5px}
-.excerpt img{width:90px;height:66px}
-.text{font-size:16px}
-.meta{margin:5px -10px 0 -10px;padding:1px 10px;}
-.thumbnail img{display:block;width:120px;height:90px}
+.excerpt{height:65px;overflow:hidden;font-size:12px;line-height:16px;margin-bottom:5px}
+.excerpt img{width:80px;height:66px}
+.text{font-size:14px}
+.meta{margin:5px -10px 0 -10px;padding:1px 10px;display:none;}
+.thumbnail img{display:block;width:100px;height:80px}
 #sidebar{width:98%;float:none;overflow:hidden;margin:0 auto}
 #search{margin:20px 0 10px 0}
 #article{margin-right:0px;margin-bottom:20px;padding:10px 10px 5px 10px;}
-#article .meat_span{width:40%;float:left}
+#article .meat_span{}
 #article h1{font-size:20px}
 #article .info{width:98%;overflow:hidden;border-bottom:1px dashed #CCC;padding-bottom:3px}
 #article .meta{padding:5px 0 0 10px}

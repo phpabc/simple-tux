@@ -241,11 +241,6 @@ return $return;
 add_filter('get_comment_author_link', 'remove_comment_links');
 remove_filter('comment_text', 'make_clickable', 9);
 
-//移除WordPress版本号
-function wpbeginner_remove_version() {
-return '';
-}
-add_filter('the_generator', 'wpbeginner_remove_version');
 
 //文章缩略图
 add_theme_support( 'post-thumbnails' );
@@ -303,4 +298,79 @@ function comment_mail_notify($comment_id) {
   }
 }
 add_action('comment_post', 'comment_mail_notify');
+
+//移除wp-head 多余代码
+    remove_action( 'wp_head', 'feed_links', 2 ); //移除feed
+    remove_action( 'wp_head', 'feed_links_extra', 3 ); //移除feed
+    remove_action( 'wp_head', 'rsd_link' ); //移除离线编辑器开放接口
+    remove_action( 'wp_head', 'wlwmanifest_link' );  //移除离线编辑器开放接口
+    remove_action( 'wp_head', 'index_rel_link' );//去除本页唯一链接信息
+    remove_action('wp_head', 'parent_post_rel_link', 10, 0 );//清除前后文信息
+    remove_action('wp_head', 'start_post_rel_link', 10, 0 );//清除前后文信息
+    remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+    remove_action('publish_future_post','check_and_publish_future_post',10, 1 );
+    remove_action( 'wp_head', 'noindex', 1 );
+    remove_action( 'wp_head', 'wp_generator' ); //移除WordPress版本
+    remove_action( 'wp_head', 'rel_canonical' );
+    remove_action( 'template_redirect', 'wp_shortlink_header', 11, 0 );
+    add_action('widgets_init', 'my_remove_recent_comments_style');
+//wp-json链接、embeds功能
+    add_filter('rest_enabled', '_return_false');
+    add_filter('rest_jsonp_enabled', '_return_false');
+    remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
+    remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );	
+    function my_remove_recent_comments_style() {
+    global $wp_widget_factory;
+    remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'] ,'recent_comments_style'));
+    }
+	//禁止加载WP自带的jquery.js
+    if ( !is_admin() ) { // 后台不禁止
+    function my_init_method() {
+    wp_deregister_script( 'jquery' ); // 取消原有的 jquery 定义
+    }
+    add_action('init', 'my_init_method');
+    }
+    wp_deregister_script( 'l10n' );
+//禁用embeds	
+		function disable_emojis() {  
+        remove_action( 'wp_head', 'print_emoji_detection_script', 7 );  
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );  
+remove_action( 'wp_print_styles', 'print_emoji_styles' );  
+remove_action( 'admin_print_styles', 'print_emoji_styles' );  
+remove_filter( 'the_content_feed', 'wp_staticize_emoji' );  
+remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );  
+remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );  
+add_filter( 'tiny_mce_plugins', 'disable_emojis_tinymce' );  
+}  
+add_action( 'init', 'disable_emojis' );  
+/** 
+* Filter function used to remove the tinymce emoji plugin. 
+*/  
+function disable_emojis_tinymce( $plugins ) {  
+if ( is_array( $plugins ) ) {  
+return array_diff( $plugins, array( 'wpemoji' ) );  
+} else {  
+return array();  
+}  
+}  
+   
+function disable_embeds_init() {  
+global $wp;  
+$wp->public_query_vars = array_diff( $wp->public_query_vars, array( 'embed', ) );  
+remove_action( 'rest_api_init', 'wp_oembed_register_route' );  
+add_filter( 'embed_oembed_discover', '__return_false' );  
+remove_filter( 'oembed_dataparse', 'wp_filter_oembed_result', 10 );  
+remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );  
+remove_action( 'wp_head', 'wp_oembed_add_host_js' );  
+add_filter( 'tiny_mce_plugins', 'disable_embeds_tiny_mce_plugin' );  
+add_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' ); }  
+add_action( 'init', 'disable_embeds_init', 9999 );  
+function disable_embeds_tiny_mce_plugin( $plugins ) { return array_diff( $plugins, array( 'wpembed' ) ); }  
+function disable_embeds_rewrites( $rules ) { foreach ( $rules as $rule => $rewrite ) { if ( false !== strpos( $rewrite, 'embed=true' ) ) { unset( $rules[ $rule ] ); } }  
+return $rules; }  
+function disable_embeds_remove_rewrite_rules() { add_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' ); flush_rewrite_rules(); }  
+register_activation_hook( __FILE__, 'disable_embeds_remove_rewrite_rules' );  
+function disable_embeds_flush_rewrite_rules() { remove_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' ); flush_rewrite_rules(); }  
+register_deactivation_hook( __FILE__, 'disable_embeds_flush_rewrite_rules' );  
+	
 ?>
