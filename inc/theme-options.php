@@ -172,7 +172,7 @@ $options = array(
     array(
         'name'  => 'GitHub',
         'desc'  => 'GitHub 主页地址',
-        'id'    => 'tux_github',
+        'id'    => 'tux_git',
         'type'  => 'text',
         'std'   => ''
     ),

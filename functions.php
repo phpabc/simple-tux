@@ -241,7 +241,6 @@ return $return;
 add_filter('get_comment_author_link', 'remove_comment_links');
 remove_filter('comment_text', 'make_clickable', 9);
 
-
 //文章缩略图
 add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 220, 140 );
@@ -298,7 +297,6 @@ function comment_mail_notify($comment_id) {
   }
 }
 add_action('comment_post', 'comment_mail_notify');
-
 //移除wp-head 多余代码
     remove_action( 'wp_head', 'feed_links', 2 ); //移除feed
     remove_action( 'wp_head', 'feed_links_extra', 3 ); //移除feed
@@ -312,25 +310,8 @@ add_action('comment_post', 'comment_mail_notify');
     remove_action( 'wp_head', 'noindex', 1 );
     remove_action( 'wp_head', 'wp_generator' ); //移除WordPress版本
     remove_action( 'wp_head', 'rel_canonical' );
+    remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
     remove_action( 'template_redirect', 'wp_shortlink_header', 11, 0 );
-    add_action('widgets_init', 'my_remove_recent_comments_style');
-//wp-json链接、embeds功能
-    add_filter('rest_enabled', '_return_false');
-    add_filter('rest_jsonp_enabled', '_return_false');
-    remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
-    remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );	
-    function my_remove_recent_comments_style() {
-    global $wp_widget_factory;
-    remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'] ,'recent_comments_style'));
-    }
-	//禁止加载WP自带的jquery.js
-    if ( !is_admin() ) { // 后台不禁止
-    function my_init_method() {
-    wp_deregister_script( 'jquery' ); // 取消原有的 jquery 定义
-    }
-    add_action('init', 'my_init_method');
-    }
-    wp_deregister_script( 'l10n' );
 //禁用embeds	
 		function disable_emojis() {  
         remove_action( 'wp_head', 'print_emoji_detection_script', 7 );  
@@ -372,5 +353,5 @@ function disable_embeds_remove_rewrite_rules() { add_filter( 'rewrite_rules_arra
 register_activation_hook( __FILE__, 'disable_embeds_remove_rewrite_rules' );  
 function disable_embeds_flush_rewrite_rules() { remove_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' ); flush_rewrite_rules(); }  
 register_deactivation_hook( __FILE__, 'disable_embeds_flush_rewrite_rules' );  
-	
+
 ?>

@@ -61,7 +61,7 @@ input[type^="radio"]{border:0;background:0;width:auto}
 #header .logo {float:left}
 #header .search {float:right;width:300px}
 .selectnav{display:none;cursor:pointer;margin:12px 10px 0 0;font-size:12px;width:90px}
-#navigation{margin:0 auto;background-color:#3a6ca4;height:51px;max-width:1300px;overflow: hidden;
+#navigation{margin:0 auto;background-color:#3a6ca4;height:51px;max-width:1300px;
    -moz-border-radius: 3px;      /* Gecko browsers */
    -webkit-border-radius: 3px;   /* Webkit browsers */
    border-radius: 3px;            /* W3C syntax */}}
@@ -133,7 +133,7 @@ input[type^="radio"]{border:0;background:0;width:auto}
 .text blockquote{border:1px dashed #ddd;background:#f1f1f1;padding:10px;margin:10px 0}
 .text blockquote p{text-indent:0}
 .text blockquote p:last-child{padding-bottom:0;text-indent:0}
-.t`t ul li{list-style:circle;margin-left:30px;line-height:26px}
+.text ul li{list-style:circle;margin-left:30px;line-height:26px}
 .text ol li{list-style:decimal;margin-left:30px;line-height:26px}
 ins{color:green}
 #search{margin:0 0 10px 0;float:none;overflow:hidden}
@@ -160,9 +160,10 @@ ins{color:green}
 .widget_views-plus{font-size:12px}
 .widget_views-plus a{font-size:14px}
 .widget_views-plus li{overflow:hidden;white-space:nowrap}
-.textwidget{margin:6px}
+.textwidget{margin:4px 2px 0px 2px;}
 .textwidget a{color:#00F}
 .textwidget p{margin:0;padding:0}
+.widget_text {padding:0px;}
 .tagcloud{line-height:36px;padding-left:6px;margin-top:5px;}
 .tagcloud a:hover{text-decoration:underline}
 .blogroll li{float:left;overflow:hidden;width:46%}
@@ -177,7 +178,7 @@ ins{color:green}
 .related ul li{padding:5px 0 0 10px}
 .related ul li a{color:#444;}
 .related ul li a:hover{color:#f60;}
-.related h3{color:#09C;	main:8px;}
+.related h3{color:#09c;margin:8px;}
 #article code{font-family:Courier;color:#139;background:#EEF;padding:3px 6px;margin:0 3px;text-shadow:1px 1px 1px #FFF;}
 .pagenav {padding:10px;}
 .comment_ul li img{margin-right:5px}
