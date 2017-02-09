@@ -189,24 +189,31 @@ ins{color:green}
 .post_link a{font-size:14px;color:#36d} 
 .post_link .prev{float:left;padding:5px 0 5px 15px}
 .post_link .next{float:right;padding:5px 15px 5px 15px}
-#comments{margin-right:340px;margin-bottom:20px;padding:20px 30px 10px 30px;background-color:#FFF;box-shadow:0 1px 2px 0 #CCC;overflow:hidden}
-#comments h3{border-bottom:1px dashed #CCC;padding:0 0 10px 20px;margin:0 -30px}
-.comment_list{margin-bottom:30px}
-.comment_list li{border-bottom:1px dashed #e5e5e5;margin:0;padding:10px 0}
-.avatar{float:left;width:40px;margin-top:2px}
-.comment{overflow:hidden;padding-left:10px}
-.comment_meta{overflow:hidden}
+
+#comments{margin-right:340px;margin-bottom:20px;background-color:#FFF;box-shadow:0 1px 2px 0 #CCC;overflow:hidden;padding:4px 10px;border:1px solid #ddd;
+    -moz-border-radius: 3px;      /* Gecko browsers */
+    -webkit-border-radius: 3px;   /* Webkit browsers */
+    border-radius: 3px            /* W3C syntax */}
+#comments h3{border-bottom:1px dashed #CCC;padding:4px 0px 4px 3px;margin:6px;}
+.comment_list{margin:5px 3px;}
+.avatar{float:left;width:36px;margin:4px 4px 0 0;}
+.comment-s{overflow:hidden;}
+.comment_meta{overflow:hidden;border-bottom: 1px dashed #c2c2c2;padding:0 3px;}
 .comment_meta cite,.comment_meta cite a{font-style:normal;color:#333}
 .comment_meta cite a:hover{color:#F60}
 .comment_meta .time{font-size:11px;color:#999;padding-left:5px}
 .comment_meta .reply,.comment_meta .edit_link{float:right;padding-right:10px;margin-top:-2px}
 .comment_meta .reply a,.comment_meta .edit_link a{font-size:12px;color:#666}
 .comment_meta .reply a:hover,.comment_meta .edit_link a:hover{color:#F60}
-.comment p{font-size:13px;color:#555;padding-right:10px}
-#comments .children{background-color:#f9f9fa;margin:10px 0 0 46px}
-#comments .children li{padding-left:10px}
+.comment p{font-size:13px;color:#555;padding:5px 7px;margin:2px 0;background-color:#fff;}
+#comments .even {background: none repeat scroll 0 0 #F7F7F7; border: 1px solid #c2c2c2;margin: 0px 6px 10px 6px;}
+#comments .odd {background: none repeat scroll 0 0 #F0F8FF; border: 1px solid #c2c2c2;margin: 0px 6px 10px 6px;}
+#comments .mycomment{padding:2px }
+#comments .depth-1 {margin-bottom:13px}
 .comment_list ol ol{border:1px dashed #e5e5e5;border-bottom:0}
 .comment_nav{overflow:hidden;margin-bottom:30px}
+
+
 #respond{margin:20px}
 #respond h3 small a{margin-left:15px;font-size:12px}
 #respond .required{color:#F00}

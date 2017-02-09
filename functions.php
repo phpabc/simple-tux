@@ -147,10 +147,9 @@ function tux_comment( $comment, $args, $depth ) {
 		// Proceed with normal comments.
 		global $post;
 	?>
-    <li id="li-comment-<?php comment_ID(); ?>">
-    <div id="comment-<?php comment_ID(); ?>">
-    	<div class="avatar"><?php echo get_avatar( $comment, 40 );?></div>
-    	<div class="comment">
+    <li id="li-comment-<?php comment_ID(); ?>" <?php comment_class(); ?> >
+    <div id="comment-<?php comment_ID(); ?>" class="mycomment">
+    	<div class="comment-s">
         	<div class="comment_meta">
             <?php printf(__('<cite>%s</cite>'), get_comment_author_link()) ?>
             <span class="time"><?php printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></span>
