@@ -156,7 +156,7 @@ function tux_comment( $comment, $args, $depth ) {
             <span class="reply"><?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( '回复', 'tux' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?></span>
             <?php edit_comment_link( __( '编辑', 'tux' ), '<span class="edit_link">', '</span>' ); ?>
             </div>
-            <?php comment_text(); ?>
+			<div class="comment_text"><?php comment_text(); ?></div>
             <?php if ( '0' == $comment->comment_approved ) : ?><p style="color:#F00;"><?php _e( '您的评论正在等待审核。', 'tux' ); ?></p><?php endif; ?>
         </div>
     </div>

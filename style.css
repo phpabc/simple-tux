@@ -198,18 +198,19 @@ ins{color:green}
 .comment_list{margin:5px 3px;}
 .avatar{float:left;width:36px;margin:4px 4px 0 0;}
 .comment-s{overflow:hidden;}
-.comment_meta{overflow:hidden;border-bottom: 1px dashed #c2c2c2;padding:0 3px;}
+.comment_meta{overflow:hidden;border-bottom: 1px dashed #c2c2c2;padding:1px 5px;}
 .comment_meta cite,.comment_meta cite a{font-style:normal;color:#333}
 .comment_meta cite a:hover{color:#F60}
 .comment_meta .time{font-size:11px;color:#999;padding-left:5px}
 .comment_meta .reply,.comment_meta .edit_link{float:right;padding-right:10px;margin-top:-2px}
 .comment_meta .reply a,.comment_meta .edit_link a{font-size:12px;color:#666}
 .comment_meta .reply a:hover,.comment_meta .edit_link a:hover{color:#F60}
-.comment p{font-size:13px;color:#555;padding:5px 7px;margin:2px 0;background-color:#fff;}
+.comment p{font-size:13px;color:#555;}
 #comments .even {background: none repeat scroll 0 0 #F7F7F7; border: 1px solid #c2c2c2;margin: 0px 6px 10px 6px;}
 #comments .odd {background: none repeat scroll 0 0 #F0F8FF; border: 1px solid #c2c2c2;margin: 0px 6px 10px 6px;}
 #comments .mycomment{padding:2px }
-#comments .depth-1 {margin-bottom:13px}
+#comments .depth-1 {margin-bottom:15px}
+#comments .comment_text {padding:11px 7px;margin:2px 0;background-color:#fff;}
 .comment_list ol ol{border:1px dashed #e5e5e5;border-bottom:0}
 .comment_nav{overflow:hidden;margin-bottom:30px}
 
