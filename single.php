@@ -13,9 +13,9 @@
                 <?php edit_post_link('编辑', '<span class="meat_span">', '</span>'); ?>
             </div>
 			<div class="text"><?php the_content(); ?></div>
-           <?php if (get_option('tux_content_ad') == 'tux_content_ad_1') { ?>
-                <div class="content_adsense"><?php echo stripslashes(get_option('tux_content_adcode')); ?> </div>
-		   <?php { echo ''; } ?><?php } else { } ?>			
+           <?php if (get_option('tux_content_ad')) { ?>
+                <div class="content_adsense"><?php echo stripslashes(get_option('tux_content_adcode')); ?></div>
+		   <?php } ?>			
 			
 			<!--相关文章开始-->
 <div class="related">

@@ -91,7 +91,7 @@ input[type^="radio"]{border:0;background:0;width:auto}
 
 #posts .h1{padding:20px;font-size:24px;margin:0 0 20px 0;background:#FFF;box-shadow:0 1px 2px 0 #CCC;-webkit-box-shadow:0 1px 2px 0 #CCC}
 .post_list{padding:20px 20px 10px 20px;border-bottom:1px solid #eee;background-color:#FFF;overflow:hidden;position:relative;}
-.post_list:hover{background-color:#fafcfc}
+.post_list:hover{background-color:#fafcfc;border:1px solid #3a6ca4}
 .post_list h2{overflow:hidden;text-overflow:ellipsis}
 .post_list h2 a{color:#444;font-size:20px;overflow:hidden;white-space:nowrap}
 .post_list h2 a:hover{color:#17A2E7;text-decoration:none}
@@ -213,8 +213,6 @@ ins{color:green}
 #comments .comment_text {padding:11px 7px;margin:2px 0;background-color:#fff;}
 .comment_list ol ol{border:1px dashed #e5e5e5;border-bottom:0}
 .comment_nav{overflow:hidden;margin-bottom:30px}
-
-
 #respond{margin:20px}
 #respond h3 small a{margin-left:15px;font-size:12px}
 #respond .required{color:#F00}
@@ -237,67 +235,33 @@ ins{color:green}
 .wid_social{margin:8px 0 5px 0px}
 .tux_social{padding:6px 1px 6px 2px}
 .iconfont_social{font-family:"iconfont";font-size:1.5em;font-style:normal}
-.wid_social a {font-size:1.9em;overflow:hidden;color:#fff;background-color:#aaa;margin-left:9px;
-    -moz-border-radius: 5px;      /* Gecko browsers */
-    -webkit-border-radius: 5px;   /* Webkit browsers */
-    border-radius: 5px            /* W3C syntax */}
+/*社交图标*/
+.wid_social a{font-size:1.9em;overflow:hidden;color:#fff;background-color:#aaa;margin-left:9px;-moz-border-radius: 5px;/* Gecko browsers*/-webkit-border-radius: 5px;/* Webkit browsers*/border-radius: 5px
+/* W3C syntax*/}
 .wid_social a:hover{color:#fff;background-color:#369}
-
-.weixins {
-	cursor:pointer;
-	background:#6fc299
-}
-.weixin-popover {
-	position:absolute;
-	margin-left:35px;
-	padding-top:14px;
-	display:none;
-	height:256px;
-}
-.weixin:hover .weixin-popover {
-	display:block
-}
-.weixin .popover {
-	display:block;
-	color:#777;
-	border:1px solid #ccc;
-	-moz-border-radius: 4px;      /* Gecko browsers */
-    -webkit-border-radius: 4px;   /* Webkit browsers */
-    border-radius: 4px            /* W3C syntax */}
-}
-
-}
-.popover {
-	position:absolute;
-	top:0;
-	left:0;
-	z-index:1010;
-	display:none;
-	max-width:262px;
-	text-align:left;
-	-webkit-background-clip:padding-box;
-	-moz-background-clip:padding;
-	background-clip:padding-box;
-	white-space:normal
-}
-
-.popover-title {
-	margin:0;
-	padding:8px 14px;
-	font-size:14px;
-	font-weight:400;
-	line-height:18px;
-	background-color:#f7f7f7;
-	border-bottom:1px solid #ebebeb;
-	border-radius:5px 5px 0 0
-}
-.popover-title:empty {
-	display:none
-}
-.popover-content {
-	padding:9px 14px;
-	background-color:#fff;
-}
+.weixins{cursor:pointer;background:#6fc299}
+.weixin-popover{position:absolute;margin-left:35px;padding-top:14px;display:none;height:256px;}
+.weixin:hover .weixin-popover{display:block}
+.weixin .popover{display:block;color:#777;border:1px solid #ccc;-moz-border-radius: 4px;/* Gecko browsers*/-webkit-border-radius: 4px;/* Webkit browsers*/border-radius: 4px
+/* W3C syntax*/}}}
+.popover{position:absolute;top:0;left:0;z-index:1010;display:none;max-width:262px;text-align:left;-webkit-background-clip:padding-box;-moz-background-clip:padding;background-clip:padding-box;white-space:normal}
+.popover-title{margin:0;padding:8px 14px;font-size:14px;font-weight:400;line-height:18px;background-color:#f7f7f7;border-bottom:1px solid #ebebeb;border-radius:5px 5px 0 0}
+.popover-title:empty{display:none}
+.popover-content{padding:9px 14px;background-color:#fff;}
+/*首页焦点*/
+.focuson{overflow: hidden;padding:10px 10px 0px 10px; margin: 0px 340px 13px 0px; background-color:#fff;border: 1px solid #ddd;
+    -moz-border-radius: 3px;      /* Gecko browsers */
+    -webkit-border-radius: 3px;   /* Webkit browsers */
+    border-radius: 3px            /* W3C syntax */}
+.focuson ul{list-style: none;margin: 0;padding-left: 50%}
+.focuson li{width: 100%;float: left;margin-bottom: 10px;}
+.focuson a{margin-left: 10px;display: block;overflow: hidden;text-align: center;height: 120px;position: relative}
+.focuson img{width: 100%;height: 100%}
+.focuson li.large{width: 100%;float: left;margin-left: -100%}
+.focuson li.large a{height: 250px;margin-left: 0}
+.focuson h4{position: absolute;left: 0;bottom: 0;right: 0;padding: 0 8px; background-color: rgba(0,0,0,.6);overflow: hidden;color: #fff;text-shadow: 1px 1px 0 #000; margin: 0;font-size: 14px;line-height: 28px}
+.focuson .large h4{font-size: 16px;line-height: 32px}
+.focuson a:hover h4{background-color: #ff5e52;opacity: .8}
 
 /*屏幕小于980px
 @media screen and (max-width:980px){#header,#content,#footer,.google{width:98%}
@@ -356,4 +320,6 @@ ins{color:green}
 #footer {width: 98%}
 #toptop {display: none}
 #footer .power-by {float:left;padding-right:15px;font-size:12px}
+.focuson{display:none; height:1px}
 ｝
+

@@ -1,8 +1,6 @@
 </div>
 <div id="footer">
-&copy;2010-2016 PHPABC.CN版权所有 &nbsp;
-浙ICP备16004727号 &nbsp;
-<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010402001198">浙公网安备 33010402001198号</a>
+<?php echo stripslashes(get_option('tux_footer_copy')); ?> <?php echo stripslashes(get_option('tux_icp')); ?>
 <span class="power-by"> Powered by <a href="http://wordpress.org/" rel="external nofollow" target="_blank">WordPress</a>,
 Theme by <a href="http://www.phpabc.cn/simple-tux.html" title="Simple Tux" target="_blank">PHPABC</a></span>
 </div>

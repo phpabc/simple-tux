@@ -1,7 +1,16 @@
 <?php get_header(); ?>
   <div id="main">
-	<div id="posts">
-			<?php while ( have_posts() ) : the_post(); ?>
+  <?php if (get_option('tux_focuson')) { ?>
+	 <div class="focuson">
+     <ul>
+     <li class="large"><a href="<?php echo stripslashes(get_option('tux_focuson_url_l')); ?>"><img src="<?php echo stripslashes(get_option('tux_focuson_imgurl_l')); ?>" style="display: inline;"><h4><?php echo stripslashes(get_option('tux_focuson_title_l')); ?></h4></a></li>
+     <li><a href="<?php echo stripslashes(get_option('tux_focuson_url_s1')); ?>"><img src="<?php echo stripslashes(get_option('tux_focuson_imgurl_s1')); ?>" style="display: inline;"><h4><?php echo stripslashes(get_option('tux_focuson_title_s1')); ?></h4></a></li>
+     <li><a href="<?php echo stripslashes(get_option('tux_focuson_url_s2')); ?>"><img src="<?php echo stripslashes(get_option('tux_focuson_imgurl_s2')); ?>" style="display: inline;"><h4><?php echo stripslashes(get_option('tux_focuson_title_s2')); ?></h4></a></li>
+     </ul>
+     </div>
+<?php } ?>
+	 <div id="posts">
+	  <?php while ( have_posts() ) : the_post(); ?>
 		<div class="post_list">
                 <?php if ( has_post_thumbnail() ) { ?> <div class="thumbnail"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"> <?php the_post_thumbnail(); ?></a></div> <?php } ?> 	
 				<h2><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>				

@@ -7,7 +7,7 @@ $options = array(
         'type'  => 'panelstart' //顶部标签的类型
     ),
 	array(
-        'name'  => '标题（Title)',
+        'name'  => '标题（Title）',
         'desc'  => '它将显示在网站首页的title标签里，必填项。',
         'id'    => 'tux_title',
         'type'  => 'text',
@@ -21,7 +21,7 @@ $options = array(
         'std'   => '关键字（KeyWords）'
     ),
 		array(
-        'name'  => '描述（Description）)',
+        'name'  => '描述（Description）',
         'desc'  => '它将显示在网站首页的meta标签的description属性里。',
         'id'    => 'tux_description',
         'type'  => 'textarea',
@@ -29,17 +29,17 @@ $options = array(
     ),	
 		array(
         'name'  => 'ICP 备案号',
-        'desc'  => '页面底部可以显示 ICP 备案信息，如果网站已备案，在此输入您的备案号</br>它将显示在页面底部,如果没有请留空',
+        'desc'  => '</br>页面底部可以显示 ICP 备案信息，如果网站已备案，在此输入您的备案号</br>它将显示在页面底部,如果没有请留空',
         'id'    => 'tux_icp',
         'type'  => 'text',
         'std'   => ''
     ),	
 		array(
-        'name'  => 'ICP 备案号',
+        'name'  => 'Footer 底部版权说明',
         'desc'  => '建站起始年份,底部版权申明出展示',
-        'id'    => 'tux_years',
+        'id'    => 'tux_footer_copy',
         'type'  => 'text',
-        'std'   => '2016'
+        'std'   => ''
     ),			
 	   array(
      	'name' => '头部Head 区代码',
@@ -70,18 +70,84 @@ $options = array(
         'std'   => '<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a></div>'
     ),
     array(
-        'name'  => '文章页底部广告',
-        'desc'  => '是否打开文章底部广告',
-        'id'    => 'tux_content_ad',
-        'type'  => 'radio',
-        'options' => array(
-            '显示' => 'tux_content_ad_1',
-            '隐藏' => 'tux_content_ad_0',),
-        'std'   => 'tux_content_ad_0'
+        'title' => '首页图片推荐设置',
+        'type'  => 'subtitle'
     ),	
     array(
+        'name'  => '是否首页文章推荐',
+        'desc'  => '开启',
+        'id'    => 'tux_focuson',
+        'type'  => 'checkbox'
+    ),	
+    array(
+        'name'  => '首页推荐大图',
+        'desc'  => '文章标题',
+        'id'    => 'tux_focuson_title_l',
+        'type'  => 'text',
+        'std'   => ''
+    ),
+	    array(
+        'desc'  => '图片地址（图片大小468x250）',
+        'id'    => 'tux_focuson_imgurl_l',
+        'type'  => 'text',
+        'std'   => ''
+    ),
+	    array(
+        'desc'  => '文章网页地址',
+        'id'    => 'tux_focuson_url_l',
+        'type'  => 'text',
+        'std'   => ''
+    ),	
+    array(
+	    'name'  => '首页推荐小图-上',
+        'desc'  => '文章标题',
+        'id'    => 'tux_focuson_title_s1',
+        'type'  => 'text',
+        'std'   => ''
+    ),
+	    array(
+        'desc'  => '图片地址（图片大小468x120）',
+        'id'    => 'tux_focuson_imgurl_s1',
+        'type'  => 'text',
+        'std'   => ''
+    ),
+	    array(
+        'desc'  => '文章网页地址',
+        'id'    => 'tux_focuson_url_s1',
+        'type'  => 'text',
+        'std'   => ''
+    ),		
+    array(
+	    'name'  => '首页推荐小图-下',	
+        'desc'  => '文章标题',
+        'id'    => 'tux_focuson_title_s2',
+        'type'  => 'text',
+        'std'   => ''
+    ),
+	    array(
+        'desc'  => '图片地址（图片大小468x120）',
+        'id'    => 'tux_focuson_imgurl_s2',
+        'type'  => 'text',
+        'std'   => ''
+    ),
+	    array(
+        'desc'  => '文章网页地址',
+        'id'    => 'tux_focuson_url_s2',
+        'type'  => 'text',
+        'std'   => ''
+    ),			
+    array(
+        'title' => '文章页底部广告设置',
+        'type'  => 'subtitle'
+    ),		
+    array(
         'name'  => '文章页底部广告',
-        'desc'  => '文章页底部广告',
+        'desc'  => '开启',
+        'id'    => 'tux_content_ad',
+        'type'  => 'checkbox',
+    ),	
+    array(
+        'desc'  => '文章页底部广告代码',
         'id'    => 'tux_content_adcode',
         'type'  => 'textarea',
         'std'   => ''
@@ -339,7 +405,7 @@ function tux_options_page() {
 
 <div class="wrap">
     <h2>Simple Tux 主题选项</h2>
-	<p>主题作者：<a href="http://www.phpabc.cn/" target="_blank">PHPABC</a> ¦ 当前版本：V1.1</br>
+	<p>主题作者：<a href="http://www.phpabc.cn/" target="_blank">PHPABC</a> ¦ 当前版本：V1.2</br>
 	主题介绍、使用帮助及升级请访问：<a href="http://www.phpabc.cn/simple-tux.html" title="TUX" target="_blank">http://www.phpabc.cn/simple-tux.html</a>
 	</p>
     <input placeholder="搜索主题选项…" type="search" id="theme-options-search" />
@@ -495,7 +561,7 @@ switch ( $value['type'] ) {
 <!-- 结束建立选项类型 -->
 <div class="panel" id="about_theme">
 <h2>关于主题</h2>
-    <p>主题作者：<a href="http://www.phpabc.cn/" target="_blank">PHPABC</a> ¦ 当前版本：V1.1</br>
+    <p>主题作者：<a href="http://www.phpabc.cn/" target="_blank">PHPABC</a> ¦ 当前版本：V1.2</br>
 	主题介绍、使用帮助及升级请访问：<a href="http://www.phpabc.cn/simple-tux.html" title="TUX" target="_blank">http://www.phpabc.cn/simple-tux.html</a>
 	</p>
 </div>
