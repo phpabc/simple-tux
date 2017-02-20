@@ -67,7 +67,7 @@ $options = array(
         'desc'  => '此处输入您的分享代码，来自第三方或者您自己的代码，它将显示在文章的右下角，如果没有请留空<br>第三方分享工具主要有：百度分享、JiaThis、BShare 等等',
         'id'    => 'tux_share',
         'type'  => 'textarea',
-        'std'   => '<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a></div>'
+        'std'   => '<div class="bshare-custom"><a title="分享到微信" class="bshare-weixin"></a><a title="分享到Twitter" class="bshare-twitter"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到i贴吧" class="bshare-itieba"></a><a title="分享到网易微博" class="bshare-neteasemb"></a><a title="分享到QQ空间" class="bshare-qzone"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=1&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>'
     ),
     array(
         'title' => '首页图片推荐设置',

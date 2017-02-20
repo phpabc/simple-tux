@@ -19,7 +19,6 @@
 			
 			<!--相关文章开始-->
 <div class="related">
-<h3>和本文关系暧昧的</h3>
 <ul>
 <?php
 global $post, $wpdb;
@@ -43,8 +42,8 @@ if ($post_tags) {
         AND term_id IN (" . $tag_list . ")
         AND ID != '" . $post->ID . "'
         ORDER BY RAND()
-        LIMIT 5");
-        // 以上代码中的 5 为限制只获取8篇相关文章
+        LIMIT 3");
+        // 以上代码中的 5 为限制只获取5篇相关文章
         // 通过修改数字 5，可修改你想要的文章数量
 
     if ( $related_posts ) {
@@ -54,11 +53,11 @@ if ($post_tags) {
 <?php   }
     }
     else {
-      echo '<li>暂无相关文章</li>';
+      echo '';
     }
 }
 else {
-  echo '<li>暂无相关文章</li>';
+  echo '';
 }
 ?>
 </ul>
