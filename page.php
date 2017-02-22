@@ -3,7 +3,7 @@
 		<div id="posts">
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<div id="article">
-			<h1 class="page" title="<?php the_title(); ?>"><?php the_title(); ?></h1>
+			<header><h1 class="page" title="<?php the_title(); ?>"><?php the_title(); ?></h1></header>
 			<div class="text"><?php the_content(); ?></div>
 		</div>
     <div id="comments"><?php comments_template( '', true ); ?></div>

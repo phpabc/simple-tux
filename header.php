@@ -51,6 +51,10 @@ if ( is_single() ){
 <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/favicon.ico" type="image/x-icon" />
 <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/tux.js"></script>
+<!--[if lt IE 9]>
+<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<script src="http://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.js"></script>
+<![endif]-->
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php
@@ -63,7 +67,7 @@ if ( is_single() ){
 
 <body <?php body_class(); ?>>
 
-<div id="header">
+<header id="header">
     <div class="navtop">
 	<div class="logo"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a><p><?php bloginfo('description'); ?></p></div>
 	<div class="search">
@@ -73,7 +77,7 @@ if ( is_single() ){
 		</form>
 	</div>	
 	</div>
-    <div id="navigation">
+    <nav id="navigation">
     <?php wp_nav_menu (array(
 	'theme_location'  => 'header-menu',
 	'container'       => false,
@@ -89,6 +93,6 @@ if ( is_single() ){
 	'depth'           => 0,
 	'walker'          => '',)
 	); ?>
-    </div>
-</div>
-<div id="content">
+    </nav>
+</header>
+<section id="content">
