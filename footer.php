@@ -5,5 +5,7 @@
 Theme by <a href="http://www.phpabc.cn/simple-tux.html" title="Simple Tux" target="_blank">PHPABC</a></span>
 </footer>
 <?php wp_footer(); ?>
+<a href="#0" class="cd-top">Go</a>
+<script src="<?php bloginfo('template_directory'); ?>/js/top.js"></script>
 </body>
 </html>
