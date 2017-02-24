@@ -17,7 +17,7 @@
 				</div>
 		</article>
 		<?php endwhile; ?>
-		<nav class="navigation"><?php pagination($query_string); ?></nav>
-	</div></div>
+	     </div>
+		<nav class="navigation"><?php pagination($query_string); ?></nav></div>
 	<?php get_sidebar('category'); ?>
 <?php get_footer(); ?>

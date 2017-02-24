@@ -26,8 +26,8 @@
 				</div> 
 		</article>
 		<?php endwhile; ?>
+	 </div>
 		<nav class="navigation"><?php pagination($query_string); ?></nav>
-	</div>
    </div>
 	<?php get_sidebar(); ?>
 <?php get_footer(); ?>
