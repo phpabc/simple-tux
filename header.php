@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php bloginfo( 'charset' ); ?>" />
-<?php if ( is_home() ) { ?><title><?php echo stripslashes(get_option('tux_title')); ?></title><?php } ?>
-<?php if ( is_search() ) { ?><title>搜索结果 - <?php bloginfo('name'); ?></title><?php } ?>
-<?php if ( is_single() ) { ?><title><?php echo trim(wp_title('',0)); ?> - <?php bloginfo('name'); ?></title><?php } ?>
-<?php if ( is_page() ) { ?><title><?php echo trim(wp_title('',0)); ?> - <?php bloginfo('name'); ?></title><?php } ?>
-<?php if ( is_category() ) { ?><title><?php single_cat_title(); ?> - <?php bloginfo('name'); ?></title><?php } ?>
-<?php if ( is_month() ) { ?><title><?php the_time('F'); ?> - <?php bloginfo('name'); ?></title><?php } ?>
-<?php if (function_exists('is_tag')) { if ( is_tag() ) { ?><title><?php single_tag_title("", true); ?> - <?php bloginfo('name'); ?></title><?php } ?> <?php } ?>
+<?php if ( is_home() ) { ?><title><?php echo stripslashes(get_option('tux_title')); if ($paged > 1) echo ' - Page ', $paged;?></title><?php } ?>
+<?php if ( is_search() ) { ?><title>搜索结果 - <?php bloginfo('name'); if ($paged > 1) echo ' - Page ', $paged;?></title><?php } ?>
+<?php if ( is_single() ) { ?><title><?php echo trim(wp_title('',0)); ?> - <?php bloginfo('name'); if ($paged > 1) echo ' - Page ', $paged;?></title><?php } ?>
+<?php if ( is_page() ) { ?><title><?php echo trim(wp_title('',0)); ?> - <?php bloginfo('name'); if ($paged > 1) echo ' - Page ', $paged;?></title><?php } ?>
+<?php if ( is_category() ) { ?><title><?php single_cat_title(); ?> - <?php bloginfo('name'); if ($paged > 1) echo ' - Page ', $paged;?></title><?php } ?>
+<?php if ( is_month() ) { ?><title><?php the_time('F'); ?> - <?php bloginfo('name'); if ($paged > 1) echo ' - Page ', $paged;?></title><?php } ?>
+<?php if (function_exists('is_tag')) { if ( is_tag() ) { ?><title><?php single_tag_title("", true); ?> - <?php bloginfo('name'); if ($paged > 1) echo ' - Page ', $paged;?></title><?php } ?> <?php } ?>
 <?php
 if (!function_exists('utf8Substr')) {
  function utf8Substr($str, $from, $len)

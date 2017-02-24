@@ -199,7 +199,7 @@ function colorCloudCallback($matches) {
  $text = $matches[1];
  $colors = array('428BCA','D9534F','567E95','4A4A4A','6E8B3D','B37333','B433FF','5CB85C');  
  $color=$colors[dechex(rand(0,7))];  $pattern = '/style=(\'|\")(.*)(\'|\")/i';
- $text = preg_replace($pattern, "style=\"color:#{$color};$2;border: 1px solid #{$color};padding: 4px 6px;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;margin-right:4px;\"", $text);
+ $text = preg_replace($pattern, "style=\"color:#{$color};$2;border: 1px solid #{$color};\"", $text);
  return "<a $text>";
 }
 add_filter('wp_tag_cloud', 'colorCloud', 1);
@@ -207,10 +207,10 @@ add_filter('wp_tag_cloud', 'colorCloud', 1);
 add_filter( 'widget_tag_cloud_args', 'theme_tag_cloud_args' );
 function theme_tag_cloud_args( $args ){
 	$newargs = array(
-		'smallest'    => 14,  //最小字号
-		'largest'     => 14, //最大字号
-		'unit'        => 'px',   //字号单位，可以是pt、px、em或%
-		'number'      => 26,     //显示个数
+		'smallest'    => 0.9,  //最小字号
+		'largest'     => 0.9, //最大字号
+		'unit'        => 'em',   //字号单位，可以是pt、px、em或%
+		'number'      => 27,     //显示个数
 		'format'      => 'flat',//列表格式，可以是flat、list或array
 		'separator'   => "\n",   //分隔每一项的分隔符
 		'orderby'     => 'count',//排序字段，可以是name或count
