@@ -207,8 +207,8 @@ add_filter('wp_tag_cloud', 'colorCloud', 1);
 add_filter( 'widget_tag_cloud_args', 'theme_tag_cloud_args' );
 function theme_tag_cloud_args( $args ){
 	$newargs = array(
-		'smallest'    => 0.9,  //最小字号
-		'largest'     => 0.9, //最大字号
+		'smallest'    => 0.8,  //最小字号
+		'largest'     => 0.8, //最大字号
 		'unit'        => 'em',   //字号单位，可以是pt、px、em或%
 		'number'      => 27,     //显示个数
 		'format'      => 'flat',//列表格式，可以是flat、list或array
