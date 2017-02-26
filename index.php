@@ -1,6 +1,6 @@
 <?php get_header(); ?>
   <div id="main">
-  <?php if (get_option('tux_focuson')) { ?>
+  <?php if ( !is_paged() && get_option('tux_focuson')) { ?>
 	 <div class="focuson">
      <ul>
      <li class="large"><a href="<?php echo stripslashes(get_option('tux_focuson_url_l')); ?>"><img src="<?php echo stripslashes(get_option('tux_focuson_imgurl_l')); ?>" style="display: inline;"><h4><?php echo stripslashes(get_option('tux_focuson_title_l')); ?></h4></a></li>
@@ -8,7 +8,7 @@
      <li><a href="<?php echo stripslashes(get_option('tux_focuson_url_s2')); ?>"><img src="<?php echo stripslashes(get_option('tux_focuson_imgurl_s2')); ?>" style="display: inline;"><h4><?php echo stripslashes(get_option('tux_focuson_title_s2')); ?></h4></a></li>
      </ul>
      </div>
-<?php } ?>
+  <?php } ?>
 	 <div id="posts">
 	  <?php while ( have_posts() ) : the_post(); ?>
 		<article class="post_list">
