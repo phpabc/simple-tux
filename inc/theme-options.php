@@ -87,7 +87,7 @@ $options = array(
         'std'   => ''
     ),
 	    array(
-        'desc'  => '图片地址（图片大小468x250）',
+        'desc'  => '图片地址（图片大小520x250）',
         'id'    => 'tux_focuson_imgurl_l',
         'type'  => 'text',
         'std'   => ''
@@ -106,7 +106,7 @@ $options = array(
         'std'   => ''
     ),
 	    array(
-        'desc'  => '图片地址（图片大小468x120）',
+        'desc'  => '图片地址（图片大小310x120）',
         'id'    => 'tux_focuson_imgurl_s1',
         'type'  => 'text',
         'std'   => ''

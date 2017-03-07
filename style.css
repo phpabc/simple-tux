@@ -63,9 +63,10 @@ input[type^="radio"]{border:0;background:0;width:auto}
 #navigation ul ul li:hover>ul{position:absolute;top:0;left:100%;opacity:1;z-index:497}
 #navigation ul li:hover>a{background:#1a242f}
 #navigation ul ul li:hover>a{background:#1a242f;color:#FFF}
-/*导航菜单*/
 .menu-item {}
-#navigation .current-post-parent,#navigation .current-menu-item {background-color:#1a242f;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;}
+#navigation .current-post-ancestor,#navigation .current-menu-item {background-color:#1a242f;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;}
+#navigation .current-post-ancestor .current-post-ancestor,#navigation .current-post-ancestor .current-menu-item {background-color:#f3f3f3;}
+#navigation .menu-item-has-children .current-menu-item a{color:#fff}
 #posts .h1{padding:20px;font-size:1.5em;margin:0 0 20px 0;background:#FFF;box-shadow:0 1px 2px 0 #CCC;-webkit-box-shadow:0 1px 2px 0 #CCC}
 .post_list{padding:20px;border-bottom:1px solid #eee;background-color:#FFF;overflow:hidden;position:relative;}
 .post_list:hover{background-color:#f7f7f7}
@@ -199,7 +200,7 @@ ins{color:green}
 #respond .required{color:#F00}
 #respond p{clear:both;margin-top:5px;overflow:hidden}
 #respond label{padding-left:5px}
-#respond input,#respond textarea{float:left;font-size:0.9em}
+#respond input,#respond textarea{float:left;font-size:1em}
 #respond .form-allowed-tags,#respond .comment-form-comment label{display:none}
 .errors_404{width:700px;height:440px;position:relative;background:url(images/404.png) no-repeat}
 .to_home{position:absolute;width:80px;height:28px;top:340px;left:310px}

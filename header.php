@@ -94,5 +94,6 @@ if ( is_single() ){
 	'walker'          => '',)
 	); ?>
     </nav>
+    </div>
 </header>
 <section id="content">
